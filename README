@@ -1,0 +1,5 @@
+Compile simple with:
+g++ -ggdb -DPPM_SUPPORTED -o simple simple.c jpeg_error_mgr_wrapper.cpp jpeg_decompress_wrapper.cpp -L. -lturbojpeg
+Run:
+./simple test.jpeg 
+this is used to confirm the program still runs after interfacing through the wrapper. 
