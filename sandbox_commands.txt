@@ -1,0 +1,28 @@
+git clone git clone https://github.com/emscripten-core/emsdk.git
+cd emsdk
+./emsdk install latest
+source ./emsdk_env.sh
+source "/home/yingchen/Documents/yingchen/cs380/emsdk/emsdk_env.sh" //change the directory to whatever yours is
+echo 'source "/home/yingchen/Documents/yingchen/cs380/emsdk/emsdk_env.sh"' >> $HOME/.bash_profile
+npm install
+
+https://github.com/libjpeg-turbo/libjpeg-turbo.git
+mkdir build
+cd build
+emcmake cmake -G"Unix Makefiles" -DCMAKE_BUILD_TYPE=Release -DWITH_SIMD=0 ../ //no simd
+emmake make
+
+git clone --recursive https://github.com/WebAssembly/wabt
+mkdir build
+cd build
+cmake ..
+cmake --build .
+
+//use bin/wasm2c to convert a wasm to c header and file
+
+shravan wasm:
+delete the void operator=(const ValueArray2& other); from file gtest-param-util-generated.h
+file test-hexfloat.cc change float on line 43 to double
+
+use wasm runtime to compile:
+gcc -c -I/home/yingchen/Documents/yingchen/cs380/wasm-sandboxing/wasm2c/ -o cjpeg_wasm cjpeg.c
