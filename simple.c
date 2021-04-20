@@ -14,13 +14,12 @@ int main(int argc, char **argv) {
 	int row_stride, width, height, pixel_size;
 
     Jpeg_decompress cinfo;
-    Jpeg_error_mgr jerr;
 
     FILE *input_file = fopen(argv[1], "rb");
 
-    cinfo.get_cinfo()->err = jerr.jpeg_std_error_wrapped();
+    cinfo.get_cinfo()->err = jpeg_std_error_wrapped(cinfo.get_id());
     cinfo.jpeg_create_decompress_wrapped();
-
+    
     cinfo.jpeg_stdio_src_wrapped(input_file);
     cinfo.jpeg_read_header_wrapped(TRUE);
 
@@ -34,7 +33,7 @@ int main(int argc, char **argv) {
 	bmp_buffer = (unsigned char*) malloc(bmp_size);
 
     row_stride = width * pixel_size;
-
+    
     while (cinfo.get_cinfo()->output_scanline < cinfo.get_cinfo()->output_height) {
 		unsigned char *buffer_array[1];
 		buffer_array[0] = bmp_buffer + \
@@ -47,7 +46,7 @@ int main(int argc, char **argv) {
     fclose(input_file);
 
     cinfo.jpeg_finish_decompress_wrapped();
-    jpeg_destroy_decompress(cinfo.get_cinfo());
+    cinfo.jpeg_destroy_wrapped();
 
     int fd = open("output.ppm", O_CREAT | O_WRONLY, 0666);
 	char buf[1024];

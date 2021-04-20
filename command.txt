@@ -1,0 +1,2 @@
+gcc -c wrapped_malloc.c
+g++ -o simple jpeg_decompress_wrapper.cpp jpeg_error_mgr_wrapper.cpp  -Wl,--wrap,wmalloc -Wl,--wrap,wfree simple.c wrapped_malloc.o libturbojpeg.a allocator.c -ggdb
