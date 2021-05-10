@@ -1,5 +1,6 @@
 #include <stdint.h>
 #include <stdlib.h>
+#include <stdbool.h>
 
 #ifdef __cplusplus
 extern "C" {
@@ -12,14 +13,7 @@ void Delete_Doc(int id);
 uint8_t* compute_Hash(int id);
 void save_hash(uint8_t* hash_result);
 bool compare_hash(uint8_t* hash_result);
-uint8_t saved_b1;
-uint8_t saved_b2;
-uint8_t saved_b3;
-uint8_t saved_b4;
-uint8_t saved_b5;
-uint8_t saved_b6;
-uint8_t saved_b7;
-uint8_t saved_b8;
+
 
 #ifdef __cplusplus
 }

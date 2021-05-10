@@ -10,15 +10,14 @@
 using namespace std;
 int curr_id = 0;
 unordered_map<int, unordered_map<uintptr_t, size_t>> my_Documentation; 
-saved_b1 = 0;
-saved_b2 = 0;
-saved_b3 = 0;
-saved_b4 = 0;
-saved_b5 = 0;
-saved_b6 = 0;
-saved_b7 = 0;
-saved_b8 = 0;
-
+uint8_t saved_b1=0;
+uint8_t saved_b2=0;
+uint8_t saved_b3=0;
+uint8_t saved_b4=0;
+uint8_t saved_b5=0;
+uint8_t saved_b6=0;
+uint8_t saved_b7=0;
+uint8_t saved_b8=0;
 
 int Insert_newDoc() {
     int id=curr_id;
@@ -67,7 +66,7 @@ uint8_t* compute_Hash(int id){
     uint8_t hash_result[8];
 
     int number_Block = my_Documentation[id].size();
-    unordered_map<uintptr_t, size_t> my_map = my_Documentation[id]
+    unordered_map<uintptr_t, size_t> my_map = my_Documentation[id];
     uint8_t* hash_sum = (uint8_t*)malloc(8*number_Block * sizeof(uint8_t));
     
     int index = 0;
