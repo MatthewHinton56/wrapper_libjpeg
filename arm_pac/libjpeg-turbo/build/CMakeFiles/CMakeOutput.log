@@ -1,0 +1,505 @@
+The system is: Linux - 5.8.0-45-generic - x86_64
+Compiling the C compiler identification source file "CMakeCCompilerId.c" succeeded.
+Compiler: /usr/bin/cc 
+Build flags: 
+Id flags:  
+
+The output was:
+0
+
+
+Compilation of the C compiler identification source "CMakeCCompilerId.c" produced "a.out"
+
+The C compiler identification is GNU, found in "/home/yingchen/Documents/yingchen/cs380/point_checksum/libjpeg-turbo/build/CMakeFiles/3.16.3/CompilerIdC/a.out"
+
+Determining if the C compiler works passed with the following output:
+Change Dir: /home/yingchen/Documents/yingchen/cs380/point_checksum/libjpeg-turbo/build/CMakeFiles/CMakeTmp
+
+Run Build Command(s):/usr/bin/make cmTC_5b4ee/fast && /usr/bin/make -f CMakeFiles/cmTC_5b4ee.dir/build.make CMakeFiles/cmTC_5b4ee.dir/build
+make[1]: Entering directory '/home/yingchen/Documents/yingchen/cs380/point_checksum/libjpeg-turbo/build/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_5b4ee.dir/testCCompiler.c.o
+/usr/bin/cc    -o CMakeFiles/cmTC_5b4ee.dir/testCCompiler.c.o   -c /home/yingchen/Documents/yingchen/cs380/point_checksum/libjpeg-turbo/build/CMakeFiles/CMakeTmp/testCCompiler.c
+Linking C executable cmTC_5b4ee
+/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_5b4ee.dir/link.txt --verbose=1
+/usr/bin/cc      -rdynamic CMakeFiles/cmTC_5b4ee.dir/testCCompiler.c.o  -o cmTC_5b4ee 
+make[1]: Leaving directory '/home/yingchen/Documents/yingchen/cs380/point_checksum/libjpeg-turbo/build/CMakeFiles/CMakeTmp'
+
+
+
+Detecting C compiler ABI info compiled with the following output:
+Change Dir: /home/yingchen/Documents/yingchen/cs380/point_checksum/libjpeg-turbo/build/CMakeFiles/CMakeTmp
+
+Run Build Command(s):/usr/bin/make cmTC_f8b35/fast && /usr/bin/make -f CMakeFiles/cmTC_f8b35.dir/build.make CMakeFiles/cmTC_f8b35.dir/build
+make[1]: Entering directory '/home/yingchen/Documents/yingchen/cs380/point_checksum/libjpeg-turbo/build/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_f8b35.dir/CMakeCCompilerABI.c.o
+/usr/bin/cc   -v -o CMakeFiles/cmTC_f8b35.dir/CMakeCCompilerABI.c.o   -c /usr/share/cmake-3.16/Modules/CMakeCCompilerABI.c
+Using built-in specs.
+COLLECT_GCC=/usr/bin/cc
+OFFLOAD_TARGET_NAMES=nvptx-none:hsa
+OFFLOAD_TARGET_DEFAULT=1
+Target: x86_64-linux-gnu
+Configured with: ../src/configure -v --with-pkgversion='Ubuntu 9.3.0-17ubuntu1~20.04' --with-bugurl=file:///usr/share/doc/gcc-9/README.Bugs --enable-languages=c,ada,c++,go,brig,d,fortran,objc,obj-c++,gm2 --prefix=/usr --with-gcc-major-version-only --program-suffix=-9 --program-prefix=x86_64-linux-gnu- --enable-shared --enable-linker-build-id --libexecdir=/usr/lib --without-included-gettext --enable-threads=posix --libdir=/usr/lib --enable-nls --enable-clocale=gnu --enable-libstdcxx-debug --enable-libstdcxx-time=yes --with-default-libstdcxx-abi=new --enable-gnu-unique-object --disable-vtable-verify --enable-plugin --enable-default-pie --with-system-zlib --with-target-system-zlib=auto --enable-objc-gc=auto --enable-multiarch --disable-werror --with-arch-32=i686 --with-abi=m64 --with-multilib-list=m32,m64,mx32 --enable-multilib --with-tune=generic --enable-offload-targets=nvptx-none=/build/gcc-9-HskZEa/gcc-9-9.3.0/debian/tmp-nvptx/usr,hsa --without-cuda-driver --enable-checking=release --build=x86_64-linux-gnu --host=x86_64-linux-gnu --target=x86_64-linux-gnu
+Thread model: posix
+gcc version 9.3.0 (Ubuntu 9.3.0-17ubuntu1~20.04) 
+COLLECT_GCC_OPTIONS='-v' '-o' 'CMakeFiles/cmTC_f8b35.dir/CMakeCCompilerABI.c.o' '-c' '-mtune=generic' '-march=x86-64'
+ /usr/lib/gcc/x86_64-linux-gnu/9/cc1 -quiet -v -imultiarch x86_64-linux-gnu /usr/share/cmake-3.16/Modules/CMakeCCompilerABI.c -quiet -dumpbase CMakeCCompilerABI.c -mtune=generic -march=x86-64 -auxbase-strip CMakeFiles/cmTC_f8b35.dir/CMakeCCompilerABI.c.o -version -fasynchronous-unwind-tables -fstack-protector-strong -Wformat -Wformat-security -fstack-clash-protection -fcf-protection -o /tmp/ccNBvJQn.s
+GNU C17 (Ubuntu 9.3.0-17ubuntu1~20.04) version 9.3.0 (x86_64-linux-gnu)
+	compiled by GNU C version 9.3.0, GMP version 6.2.0, MPFR version 4.0.2, MPC version 1.1.0, isl version isl-0.22.1-GMP
+
+GGC heuristics: --param ggc-min-expand=100 --param ggc-min-heapsize=131072
+ignoring nonexistent directory "/usr/local/include/x86_64-linux-gnu"
+ignoring nonexistent directory "/usr/lib/gcc/x86_64-linux-gnu/9/include-fixed"
+ignoring nonexistent directory "/usr/lib/gcc/x86_64-linux-gnu/9/../../../../x86_64-linux-gnu/include"
+#include "..." search starts here:
+#include <...> search starts here:
+ /usr/lib/gcc/x86_64-linux-gnu/9/include
+ /usr/local/include
+ /usr/include/x86_64-linux-gnu
+ /usr/include
+End of search list.
+GNU C17 (Ubuntu 9.3.0-17ubuntu1~20.04) version 9.3.0 (x86_64-linux-gnu)
+	compiled by GNU C version 9.3.0, GMP version 6.2.0, MPFR version 4.0.2, MPC version 1.1.0, isl version isl-0.22.1-GMP
+
+GGC heuristics: --param ggc-min-expand=100 --param ggc-min-heapsize=131072
+Compiler executable checksum: bbf13931d8de1abe14040c9909cb6969
+COLLECT_GCC_OPTIONS='-v' '-o' 'CMakeFiles/cmTC_f8b35.dir/CMakeCCompilerABI.c.o' '-c' '-mtune=generic' '-march=x86-64'
+ as -v --64 -o CMakeFiles/cmTC_f8b35.dir/CMakeCCompilerABI.c.o /tmp/ccNBvJQn.s
+GNU assembler version 2.34 (x86_64-linux-gnu) using BFD version (GNU Binutils for Ubuntu) 2.34
+COMPILER_PATH=/usr/lib/gcc/x86_64-linux-gnu/9/:/usr/lib/gcc/x86_64-linux-gnu/9/:/usr/lib/gcc/x86_64-linux-gnu/:/usr/lib/gcc/x86_64-linux-gnu/9/:/usr/lib/gcc/x86_64-linux-gnu/
+LIBRARY_PATH=/usr/lib/gcc/x86_64-linux-gnu/9/:/usr/lib/gcc/x86_64-linux-gnu/9/../../../x86_64-linux-gnu/:/usr/lib/gcc/x86_64-linux-gnu/9/../../../../lib/:/lib/x86_64-linux-gnu/:/lib/../lib/:/usr/lib/x86_64-linux-gnu/:/usr/lib/../lib/:/usr/lib/gcc/x86_64-linux-gnu/9/../../../:/lib/:/usr/lib/
+COLLECT_GCC_OPTIONS='-v' '-o' 'CMakeFiles/cmTC_f8b35.dir/CMakeCCompilerABI.c.o' '-c' '-mtune=generic' '-march=x86-64'
+Linking C executable cmTC_f8b35
+/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_f8b35.dir/link.txt --verbose=1
+/usr/bin/cc     -v -rdynamic CMakeFiles/cmTC_f8b35.dir/CMakeCCompilerABI.c.o  -o cmTC_f8b35 
+Using built-in specs.
+COLLECT_GCC=/usr/bin/cc
+COLLECT_LTO_WRAPPER=/usr/lib/gcc/x86_64-linux-gnu/9/lto-wrapper
+OFFLOAD_TARGET_NAMES=nvptx-none:hsa
+OFFLOAD_TARGET_DEFAULT=1
+Target: x86_64-linux-gnu
+Configured with: ../src/configure -v --with-pkgversion='Ubuntu 9.3.0-17ubuntu1~20.04' --with-bugurl=file:///usr/share/doc/gcc-9/README.Bugs --enable-languages=c,ada,c++,go,brig,d,fortran,objc,obj-c++,gm2 --prefix=/usr --with-gcc-major-version-only --program-suffix=-9 --program-prefix=x86_64-linux-gnu- --enable-shared --enable-linker-build-id --libexecdir=/usr/lib --without-included-gettext --enable-threads=posix --libdir=/usr/lib --enable-nls --enable-clocale=gnu --enable-libstdcxx-debug --enable-libstdcxx-time=yes --with-default-libstdcxx-abi=new --enable-gnu-unique-object --disable-vtable-verify --enable-plugin --enable-default-pie --with-system-zlib --with-target-system-zlib=auto --enable-objc-gc=auto --enable-multiarch --disable-werror --with-arch-32=i686 --with-abi=m64 --with-multilib-list=m32,m64,mx32 --enable-multilib --with-tune=generic --enable-offload-targets=nvptx-none=/build/gcc-9-HskZEa/gcc-9-9.3.0/debian/tmp-nvptx/usr,hsa --without-cuda-driver --enable-checking=release --build=x86_64-linux-gnu --host=x86_64-linux-gnu --target=x86_64-linux-gnu
+Thread model: posix
+gcc version 9.3.0 (Ubuntu 9.3.0-17ubuntu1~20.04) 
+COMPILER_PATH=/usr/lib/gcc/x86_64-linux-gnu/9/:/usr/lib/gcc/x86_64-linux-gnu/9/:/usr/lib/gcc/x86_64-linux-gnu/:/usr/lib/gcc/x86_64-linux-gnu/9/:/usr/lib/gcc/x86_64-linux-gnu/
+LIBRARY_PATH=/usr/lib/gcc/x86_64-linux-gnu/9/:/usr/lib/gcc/x86_64-linux-gnu/9/../../../x86_64-linux-gnu/:/usr/lib/gcc/x86_64-linux-gnu/9/../../../../lib/:/lib/x86_64-linux-gnu/:/lib/../lib/:/usr/lib/x86_64-linux-gnu/:/usr/lib/../lib/:/usr/lib/gcc/x86_64-linux-gnu/9/../../../:/lib/:/usr/lib/
+COLLECT_GCC_OPTIONS='-v' '-rdynamic' '-o' 'cmTC_f8b35' '-mtune=generic' '-march=x86-64'
+ /usr/lib/gcc/x86_64-linux-gnu/9/collect2 -plugin /usr/lib/gcc/x86_64-linux-gnu/9/liblto_plugin.so -plugin-opt=/usr/lib/gcc/x86_64-linux-gnu/9/lto-wrapper -plugin-opt=-fresolution=/tmp/cc1pcREO.res -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lgcc_s -plugin-opt=-pass-through=-lc -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lgcc_s --build-id --eh-frame-hdr -m elf_x86_64 --hash-style=gnu --as-needed -export-dynamic -dynamic-linker /lib64/ld-linux-x86-64.so.2 -pie -z now -z relro -o cmTC_f8b35 /usr/lib/gcc/x86_64-linux-gnu/9/../../../x86_64-linux-gnu/Scrt1.o /usr/lib/gcc/x86_64-linux-gnu/9/../../../x86_64-linux-gnu/crti.o /usr/lib/gcc/x86_64-linux-gnu/9/crtbeginS.o -L/usr/lib/gcc/x86_64-linux-gnu/9 -L/usr/lib/gcc/x86_64-linux-gnu/9/../../../x86_64-linux-gnu -L/usr/lib/gcc/x86_64-linux-gnu/9/../../../../lib -L/lib/x86_64-linux-gnu -L/lib/../lib -L/usr/lib/x86_64-linux-gnu -L/usr/lib/../lib -L/usr/lib/gcc/x86_64-linux-gnu/9/../../.. CMakeFiles/cmTC_f8b35.dir/CMakeCCompilerABI.c.o -lgcc --push-state --as-needed -lgcc_s --pop-state -lc -lgcc --push-state --as-needed -lgcc_s --pop-state /usr/lib/gcc/x86_64-linux-gnu/9/crtendS.o /usr/lib/gcc/x86_64-linux-gnu/9/../../../x86_64-linux-gnu/crtn.o
+COLLECT_GCC_OPTIONS='-v' '-rdynamic' '-o' 'cmTC_f8b35' '-mtune=generic' '-march=x86-64'
+make[1]: Leaving directory '/home/yingchen/Documents/yingchen/cs380/point_checksum/libjpeg-turbo/build/CMakeFiles/CMakeTmp'
+
+
+
+Parsed C implicit include dir info from above output: rv=done
+  found start of include info
+  found start of implicit include info
+    add: [/usr/lib/gcc/x86_64-linux-gnu/9/include]
+    add: [/usr/local/include]
+    add: [/usr/include/x86_64-linux-gnu]
+    add: [/usr/include]
+  end of search list found
+  collapse include dir [/usr/lib/gcc/x86_64-linux-gnu/9/include] ==> [/usr/lib/gcc/x86_64-linux-gnu/9/include]
+  collapse include dir [/usr/local/include] ==> [/usr/local/include]
+  collapse include dir [/usr/include/x86_64-linux-gnu] ==> [/usr/include/x86_64-linux-gnu]
+  collapse include dir [/usr/include] ==> [/usr/include]
+  implicit include dirs: [/usr/lib/gcc/x86_64-linux-gnu/9/include;/usr/local/include;/usr/include/x86_64-linux-gnu;/usr/include]
+
+
+Parsed C implicit link information from above output:
+  link line regex: [^( *|.*[/\])(ld|CMAKE_LINK_STARTFILE-NOTFOUND|([^/\]+-)?ld|collect2)[^/\]*( |$)]
+  ignore line: [Change Dir: /home/yingchen/Documents/yingchen/cs380/point_checksum/libjpeg-turbo/build/CMakeFiles/CMakeTmp]
+  ignore line: []
+  ignore line: [Run Build Command(s):/usr/bin/make cmTC_f8b35/fast && /usr/bin/make -f CMakeFiles/cmTC_f8b35.dir/build.make CMakeFiles/cmTC_f8b35.dir/build]
+  ignore line: [make[1]: Entering directory '/home/yingchen/Documents/yingchen/cs380/point_checksum/libjpeg-turbo/build/CMakeFiles/CMakeTmp']
+  ignore line: [Building C object CMakeFiles/cmTC_f8b35.dir/CMakeCCompilerABI.c.o]
+  ignore line: [/usr/bin/cc   -v -o CMakeFiles/cmTC_f8b35.dir/CMakeCCompilerABI.c.o   -c /usr/share/cmake-3.16/Modules/CMakeCCompilerABI.c]
+  ignore line: [Using built-in specs.]
+  ignore line: [COLLECT_GCC=/usr/bin/cc]
+  ignore line: [OFFLOAD_TARGET_NAMES=nvptx-none:hsa]
+  ignore line: [OFFLOAD_TARGET_DEFAULT=1]
+  ignore line: [Target: x86_64-linux-gnu]
+  ignore line: [Configured with: ../src/configure -v --with-pkgversion='Ubuntu 9.3.0-17ubuntu1~20.04' --with-bugurl=file:///usr/share/doc/gcc-9/README.Bugs --enable-languages=c ada c++ go brig d fortran objc obj-c++ gm2 --prefix=/usr --with-gcc-major-version-only --program-suffix=-9 --program-prefix=x86_64-linux-gnu- --enable-shared --enable-linker-build-id --libexecdir=/usr/lib --without-included-gettext --enable-threads=posix --libdir=/usr/lib --enable-nls --enable-clocale=gnu --enable-libstdcxx-debug --enable-libstdcxx-time=yes --with-default-libstdcxx-abi=new --enable-gnu-unique-object --disable-vtable-verify --enable-plugin --enable-default-pie --with-system-zlib --with-target-system-zlib=auto --enable-objc-gc=auto --enable-multiarch --disable-werror --with-arch-32=i686 --with-abi=m64 --with-multilib-list=m32 m64 mx32 --enable-multilib --with-tune=generic --enable-offload-targets=nvptx-none=/build/gcc-9-HskZEa/gcc-9-9.3.0/debian/tmp-nvptx/usr hsa --without-cuda-driver --enable-checking=release --build=x86_64-linux-gnu --host=x86_64-linux-gnu --target=x86_64-linux-gnu]
+  ignore line: [Thread model: posix]
+  ignore line: [gcc version 9.3.0 (Ubuntu 9.3.0-17ubuntu1~20.04) ]
+  ignore line: [COLLECT_GCC_OPTIONS='-v' '-o' 'CMakeFiles/cmTC_f8b35.dir/CMakeCCompilerABI.c.o' '-c' '-mtune=generic' '-march=x86-64']
+  ignore line: [ /usr/lib/gcc/x86_64-linux-gnu/9/cc1 -quiet -v -imultiarch x86_64-linux-gnu /usr/share/cmake-3.16/Modules/CMakeCCompilerABI.c -quiet -dumpbase CMakeCCompilerABI.c -mtune=generic -march=x86-64 -auxbase-strip CMakeFiles/cmTC_f8b35.dir/CMakeCCompilerABI.c.o -version -fasynchronous-unwind-tables -fstack-protector-strong -Wformat -Wformat-security -fstack-clash-protection -fcf-protection -o /tmp/ccNBvJQn.s]
+  ignore line: [GNU C17 (Ubuntu 9.3.0-17ubuntu1~20.04) version 9.3.0 (x86_64-linux-gnu)]
+  ignore line: [	compiled by GNU C version 9.3.0  GMP version 6.2.0  MPFR version 4.0.2  MPC version 1.1.0  isl version isl-0.22.1-GMP]
+  ignore line: []
+  ignore line: [GGC heuristics: --param ggc-min-expand=100 --param ggc-min-heapsize=131072]
+  ignore line: [ignoring nonexistent directory "/usr/local/include/x86_64-linux-gnu"]
+  ignore line: [ignoring nonexistent directory "/usr/lib/gcc/x86_64-linux-gnu/9/include-fixed"]
+  ignore line: [ignoring nonexistent directory "/usr/lib/gcc/x86_64-linux-gnu/9/../../../../x86_64-linux-gnu/include"]
+  ignore line: [#include "..." search starts here:]
+  ignore line: [#include <...> search starts here:]
+  ignore line: [ /usr/lib/gcc/x86_64-linux-gnu/9/include]
+  ignore line: [ /usr/local/include]
+  ignore line: [ /usr/include/x86_64-linux-gnu]
+  ignore line: [ /usr/include]
+  ignore line: [End of search list.]
+  ignore line: [GNU C17 (Ubuntu 9.3.0-17ubuntu1~20.04) version 9.3.0 (x86_64-linux-gnu)]
+  ignore line: [	compiled by GNU C version 9.3.0  GMP version 6.2.0  MPFR version 4.0.2  MPC version 1.1.0  isl version isl-0.22.1-GMP]
+  ignore line: []
+  ignore line: [GGC heuristics: --param ggc-min-expand=100 --param ggc-min-heapsize=131072]
+  ignore line: [Compiler executable checksum: bbf13931d8de1abe14040c9909cb6969]
+  ignore line: [COLLECT_GCC_OPTIONS='-v' '-o' 'CMakeFiles/cmTC_f8b35.dir/CMakeCCompilerABI.c.o' '-c' '-mtune=generic' '-march=x86-64']
+  ignore line: [ as -v --64 -o CMakeFiles/cmTC_f8b35.dir/CMakeCCompilerABI.c.o /tmp/ccNBvJQn.s]
+  ignore line: [GNU assembler version 2.34 (x86_64-linux-gnu) using BFD version (GNU Binutils for Ubuntu) 2.34]
+  ignore line: [COMPILER_PATH=/usr/lib/gcc/x86_64-linux-gnu/9/:/usr/lib/gcc/x86_64-linux-gnu/9/:/usr/lib/gcc/x86_64-linux-gnu/:/usr/lib/gcc/x86_64-linux-gnu/9/:/usr/lib/gcc/x86_64-linux-gnu/]
+  ignore line: [LIBRARY_PATH=/usr/lib/gcc/x86_64-linux-gnu/9/:/usr/lib/gcc/x86_64-linux-gnu/9/../../../x86_64-linux-gnu/:/usr/lib/gcc/x86_64-linux-gnu/9/../../../../lib/:/lib/x86_64-linux-gnu/:/lib/../lib/:/usr/lib/x86_64-linux-gnu/:/usr/lib/../lib/:/usr/lib/gcc/x86_64-linux-gnu/9/../../../:/lib/:/usr/lib/]
+  ignore line: [COLLECT_GCC_OPTIONS='-v' '-o' 'CMakeFiles/cmTC_f8b35.dir/CMakeCCompilerABI.c.o' '-c' '-mtune=generic' '-march=x86-64']
+  ignore line: [Linking C executable cmTC_f8b35]
+  ignore line: [/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_f8b35.dir/link.txt --verbose=1]
+  ignore line: [/usr/bin/cc     -v -rdynamic CMakeFiles/cmTC_f8b35.dir/CMakeCCompilerABI.c.o  -o cmTC_f8b35 ]
+  ignore line: [Using built-in specs.]
+  ignore line: [COLLECT_GCC=/usr/bin/cc]
+  ignore line: [COLLECT_LTO_WRAPPER=/usr/lib/gcc/x86_64-linux-gnu/9/lto-wrapper]
+  ignore line: [OFFLOAD_TARGET_NAMES=nvptx-none:hsa]
+  ignore line: [OFFLOAD_TARGET_DEFAULT=1]
+  ignore line: [Target: x86_64-linux-gnu]
+  ignore line: [Configured with: ../src/configure -v --with-pkgversion='Ubuntu 9.3.0-17ubuntu1~20.04' --with-bugurl=file:///usr/share/doc/gcc-9/README.Bugs --enable-languages=c ada c++ go brig d fortran objc obj-c++ gm2 --prefix=/usr --with-gcc-major-version-only --program-suffix=-9 --program-prefix=x86_64-linux-gnu- --enable-shared --enable-linker-build-id --libexecdir=/usr/lib --without-included-gettext --enable-threads=posix --libdir=/usr/lib --enable-nls --enable-clocale=gnu --enable-libstdcxx-debug --enable-libstdcxx-time=yes --with-default-libstdcxx-abi=new --enable-gnu-unique-object --disable-vtable-verify --enable-plugin --enable-default-pie --with-system-zlib --with-target-system-zlib=auto --enable-objc-gc=auto --enable-multiarch --disable-werror --with-arch-32=i686 --with-abi=m64 --with-multilib-list=m32 m64 mx32 --enable-multilib --with-tune=generic --enable-offload-targets=nvptx-none=/build/gcc-9-HskZEa/gcc-9-9.3.0/debian/tmp-nvptx/usr hsa --without-cuda-driver --enable-checking=release --build=x86_64-linux-gnu --host=x86_64-linux-gnu --target=x86_64-linux-gnu]
+  ignore line: [Thread model: posix]
+  ignore line: [gcc version 9.3.0 (Ubuntu 9.3.0-17ubuntu1~20.04) ]
+  ignore line: [COMPILER_PATH=/usr/lib/gcc/x86_64-linux-gnu/9/:/usr/lib/gcc/x86_64-linux-gnu/9/:/usr/lib/gcc/x86_64-linux-gnu/:/usr/lib/gcc/x86_64-linux-gnu/9/:/usr/lib/gcc/x86_64-linux-gnu/]
+  ignore line: [LIBRARY_PATH=/usr/lib/gcc/x86_64-linux-gnu/9/:/usr/lib/gcc/x86_64-linux-gnu/9/../../../x86_64-linux-gnu/:/usr/lib/gcc/x86_64-linux-gnu/9/../../../../lib/:/lib/x86_64-linux-gnu/:/lib/../lib/:/usr/lib/x86_64-linux-gnu/:/usr/lib/../lib/:/usr/lib/gcc/x86_64-linux-gnu/9/../../../:/lib/:/usr/lib/]
+  ignore line: [COLLECT_GCC_OPTIONS='-v' '-rdynamic' '-o' 'cmTC_f8b35' '-mtune=generic' '-march=x86-64']
+  link line: [ /usr/lib/gcc/x86_64-linux-gnu/9/collect2 -plugin /usr/lib/gcc/x86_64-linux-gnu/9/liblto_plugin.so -plugin-opt=/usr/lib/gcc/x86_64-linux-gnu/9/lto-wrapper -plugin-opt=-fresolution=/tmp/cc1pcREO.res -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lgcc_s -plugin-opt=-pass-through=-lc -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lgcc_s --build-id --eh-frame-hdr -m elf_x86_64 --hash-style=gnu --as-needed -export-dynamic -dynamic-linker /lib64/ld-linux-x86-64.so.2 -pie -z now -z relro -o cmTC_f8b35 /usr/lib/gcc/x86_64-linux-gnu/9/../../../x86_64-linux-gnu/Scrt1.o /usr/lib/gcc/x86_64-linux-gnu/9/../../../x86_64-linux-gnu/crti.o /usr/lib/gcc/x86_64-linux-gnu/9/crtbeginS.o -L/usr/lib/gcc/x86_64-linux-gnu/9 -L/usr/lib/gcc/x86_64-linux-gnu/9/../../../x86_64-linux-gnu -L/usr/lib/gcc/x86_64-linux-gnu/9/../../../../lib -L/lib/x86_64-linux-gnu -L/lib/../lib -L/usr/lib/x86_64-linux-gnu -L/usr/lib/../lib -L/usr/lib/gcc/x86_64-linux-gnu/9/../../.. CMakeFiles/cmTC_f8b35.dir/CMakeCCompilerABI.c.o -lgcc --push-state --as-needed -lgcc_s --pop-state -lc -lgcc --push-state --as-needed -lgcc_s --pop-state /usr/lib/gcc/x86_64-linux-gnu/9/crtendS.o /usr/lib/gcc/x86_64-linux-gnu/9/../../../x86_64-linux-gnu/crtn.o]
+    arg [/usr/lib/gcc/x86_64-linux-gnu/9/collect2] ==> ignore
+    arg [-plugin] ==> ignore
+    arg [/usr/lib/gcc/x86_64-linux-gnu/9/liblto_plugin.so] ==> ignore
+    arg [-plugin-opt=/usr/lib/gcc/x86_64-linux-gnu/9/lto-wrapper] ==> ignore
+    arg [-plugin-opt=-fresolution=/tmp/cc1pcREO.res] ==> ignore
+    arg [-plugin-opt=-pass-through=-lgcc] ==> ignore
+    arg [-plugin-opt=-pass-through=-lgcc_s] ==> ignore
+    arg [-plugin-opt=-pass-through=-lc] ==> ignore
+    arg [-plugin-opt=-pass-through=-lgcc] ==> ignore
+    arg [-plugin-opt=-pass-through=-lgcc_s] ==> ignore
+    arg [--build-id] ==> ignore
+    arg [--eh-frame-hdr] ==> ignore
+    arg [-m] ==> ignore
+    arg [elf_x86_64] ==> ignore
+    arg [--hash-style=gnu] ==> ignore
+    arg [--as-needed] ==> ignore
+    arg [-export-dynamic] ==> ignore
+    arg [-dynamic-linker] ==> ignore
+    arg [/lib64/ld-linux-x86-64.so.2] ==> ignore
+    arg [-pie] ==> ignore
+    arg [-znow] ==> ignore
+    arg [-zrelro] ==> ignore
+    arg [-o] ==> ignore
+    arg [cmTC_f8b35] ==> ignore
+    arg [/usr/lib/gcc/x86_64-linux-gnu/9/../../../x86_64-linux-gnu/Scrt1.o] ==> ignore
+    arg [/usr/lib/gcc/x86_64-linux-gnu/9/../../../x86_64-linux-gnu/crti.o] ==> ignore
+    arg [/usr/lib/gcc/x86_64-linux-gnu/9/crtbeginS.o] ==> ignore
+    arg [-L/usr/lib/gcc/x86_64-linux-gnu/9] ==> dir [/usr/lib/gcc/x86_64-linux-gnu/9]
+    arg [-L/usr/lib/gcc/x86_64-linux-gnu/9/../../../x86_64-linux-gnu] ==> dir [/usr/lib/gcc/x86_64-linux-gnu/9/../../../x86_64-linux-gnu]
+    arg [-L/usr/lib/gcc/x86_64-linux-gnu/9/../../../../lib] ==> dir [/usr/lib/gcc/x86_64-linux-gnu/9/../../../../lib]
+    arg [-L/lib/x86_64-linux-gnu] ==> dir [/lib/x86_64-linux-gnu]
+    arg [-L/lib/../lib] ==> dir [/lib/../lib]
+    arg [-L/usr/lib/x86_64-linux-gnu] ==> dir [/usr/lib/x86_64-linux-gnu]
+    arg [-L/usr/lib/../lib] ==> dir [/usr/lib/../lib]
+    arg [-L/usr/lib/gcc/x86_64-linux-gnu/9/../../..] ==> dir [/usr/lib/gcc/x86_64-linux-gnu/9/../../..]
+    arg [CMakeFiles/cmTC_f8b35.dir/CMakeCCompilerABI.c.o] ==> ignore
+    arg [-lgcc] ==> lib [gcc]
+    arg [--push-state] ==> ignore
+    arg [--as-needed] ==> ignore
+    arg [-lgcc_s] ==> lib [gcc_s]
+    arg [--pop-state] ==> ignore
+    arg [-lc] ==> lib [c]
+    arg [-lgcc] ==> lib [gcc]
+    arg [--push-state] ==> ignore
+    arg [--as-needed] ==> ignore
+    arg [-lgcc_s] ==> lib [gcc_s]
+    arg [--pop-state] ==> ignore
+    arg [/usr/lib/gcc/x86_64-linux-gnu/9/crtendS.o] ==> ignore
+    arg [/usr/lib/gcc/x86_64-linux-gnu/9/../../../x86_64-linux-gnu/crtn.o] ==> ignore
+  collapse library dir [/usr/lib/gcc/x86_64-linux-gnu/9] ==> [/usr/lib/gcc/x86_64-linux-gnu/9]
+  collapse library dir [/usr/lib/gcc/x86_64-linux-gnu/9/../../../x86_64-linux-gnu] ==> [/usr/lib/x86_64-linux-gnu]
+  collapse library dir [/usr/lib/gcc/x86_64-linux-gnu/9/../../../../lib] ==> [/usr/lib]
+  collapse library dir [/lib/x86_64-linux-gnu] ==> [/lib/x86_64-linux-gnu]
+  collapse library dir [/lib/../lib] ==> [/lib]
+  collapse library dir [/usr/lib/x86_64-linux-gnu] ==> [/usr/lib/x86_64-linux-gnu]
+  collapse library dir [/usr/lib/../lib] ==> [/usr/lib]
+  collapse library dir [/usr/lib/gcc/x86_64-linux-gnu/9/../../..] ==> [/usr/lib]
+  implicit libs: [gcc;gcc_s;c;gcc;gcc_s]
+  implicit dirs: [/usr/lib/gcc/x86_64-linux-gnu/9;/usr/lib/x86_64-linux-gnu;/usr/lib;/lib/x86_64-linux-gnu;/lib]
+  implicit fwks: []
+
+
+Determining if the include file sys/types.h exists passed with the following output:
+Change Dir: /home/yingchen/Documents/yingchen/cs380/point_checksum/libjpeg-turbo/build/CMakeFiles/CMakeTmp
+
+Run Build Command(s):/usr/bin/make cmTC_dfa4c/fast && /usr/bin/make -f CMakeFiles/cmTC_dfa4c.dir/build.make CMakeFiles/cmTC_dfa4c.dir/build
+make[1]: Entering directory '/home/yingchen/Documents/yingchen/cs380/point_checksum/libjpeg-turbo/build/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_dfa4c.dir/CheckIncludeFile.c.o
+/usr/bin/cc    -o CMakeFiles/cmTC_dfa4c.dir/CheckIncludeFile.c.o   -c /home/yingchen/Documents/yingchen/cs380/point_checksum/libjpeg-turbo/build/CMakeFiles/CMakeTmp/CheckIncludeFile.c
+Linking C executable cmTC_dfa4c
+/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_dfa4c.dir/link.txt --verbose=1
+/usr/bin/cc      -rdynamic CMakeFiles/cmTC_dfa4c.dir/CheckIncludeFile.c.o  -o cmTC_dfa4c 
+make[1]: Leaving directory '/home/yingchen/Documents/yingchen/cs380/point_checksum/libjpeg-turbo/build/CMakeFiles/CMakeTmp'
+
+
+
+Determining if the include file stdint.h exists passed with the following output:
+Change Dir: /home/yingchen/Documents/yingchen/cs380/point_checksum/libjpeg-turbo/build/CMakeFiles/CMakeTmp
+
+Run Build Command(s):/usr/bin/make cmTC_2e3c2/fast && /usr/bin/make -f CMakeFiles/cmTC_2e3c2.dir/build.make CMakeFiles/cmTC_2e3c2.dir/build
+make[1]: Entering directory '/home/yingchen/Documents/yingchen/cs380/point_checksum/libjpeg-turbo/build/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_2e3c2.dir/CheckIncludeFile.c.o
+/usr/bin/cc    -o CMakeFiles/cmTC_2e3c2.dir/CheckIncludeFile.c.o   -c /home/yingchen/Documents/yingchen/cs380/point_checksum/libjpeg-turbo/build/CMakeFiles/CMakeTmp/CheckIncludeFile.c
+Linking C executable cmTC_2e3c2
+/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_2e3c2.dir/link.txt --verbose=1
+/usr/bin/cc      -rdynamic CMakeFiles/cmTC_2e3c2.dir/CheckIncludeFile.c.o  -o cmTC_2e3c2 
+make[1]: Leaving directory '/home/yingchen/Documents/yingchen/cs380/point_checksum/libjpeg-turbo/build/CMakeFiles/CMakeTmp'
+
+
+
+Determining if the include file stddef.h exists passed with the following output:
+Change Dir: /home/yingchen/Documents/yingchen/cs380/point_checksum/libjpeg-turbo/build/CMakeFiles/CMakeTmp
+
+Run Build Command(s):/usr/bin/make cmTC_159e9/fast && /usr/bin/make -f CMakeFiles/cmTC_159e9.dir/build.make CMakeFiles/cmTC_159e9.dir/build
+make[1]: Entering directory '/home/yingchen/Documents/yingchen/cs380/point_checksum/libjpeg-turbo/build/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_159e9.dir/CheckIncludeFile.c.o
+/usr/bin/cc    -o CMakeFiles/cmTC_159e9.dir/CheckIncludeFile.c.o   -c /home/yingchen/Documents/yingchen/cs380/point_checksum/libjpeg-turbo/build/CMakeFiles/CMakeTmp/CheckIncludeFile.c
+Linking C executable cmTC_159e9
+/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_159e9.dir/link.txt --verbose=1
+/usr/bin/cc      -rdynamic CMakeFiles/cmTC_159e9.dir/CheckIncludeFile.c.o  -o cmTC_159e9 
+make[1]: Leaving directory '/home/yingchen/Documents/yingchen/cs380/point_checksum/libjpeg-turbo/build/CMakeFiles/CMakeTmp'
+
+
+
+Determining size of size_t passed with the following output:
+Change Dir: /home/yingchen/Documents/yingchen/cs380/point_checksum/libjpeg-turbo/build/CMakeFiles/CMakeTmp
+
+Run Build Command(s):/usr/bin/make cmTC_76c1f/fast && /usr/bin/make -f CMakeFiles/cmTC_76c1f.dir/build.make CMakeFiles/cmTC_76c1f.dir/build
+make[1]: Entering directory '/home/yingchen/Documents/yingchen/cs380/point_checksum/libjpeg-turbo/build/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_76c1f.dir/SIZE_T.c.o
+/usr/bin/cc    -o CMakeFiles/cmTC_76c1f.dir/SIZE_T.c.o   -c /home/yingchen/Documents/yingchen/cs380/point_checksum/libjpeg-turbo/build/CMakeFiles/CheckTypeSize/SIZE_T.c
+Linking C executable cmTC_76c1f
+/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_76c1f.dir/link.txt --verbose=1
+/usr/bin/cc      -rdynamic CMakeFiles/cmTC_76c1f.dir/SIZE_T.c.o  -o cmTC_76c1f 
+make[1]: Leaving directory '/home/yingchen/Documents/yingchen/cs380/point_checksum/libjpeg-turbo/build/CMakeFiles/CMakeTmp'
+
+
+
+Determining size of unsigned long passed with the following output:
+Change Dir: /home/yingchen/Documents/yingchen/cs380/point_checksum/libjpeg-turbo/build/CMakeFiles/CMakeTmp
+
+Run Build Command(s):/usr/bin/make cmTC_aafbb/fast && /usr/bin/make -f CMakeFiles/cmTC_aafbb.dir/build.make CMakeFiles/cmTC_aafbb.dir/build
+make[1]: Entering directory '/home/yingchen/Documents/yingchen/cs380/point_checksum/libjpeg-turbo/build/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_aafbb.dir/UNSIGNED_LONG.c.o
+/usr/bin/cc    -o CMakeFiles/cmTC_aafbb.dir/UNSIGNED_LONG.c.o   -c /home/yingchen/Documents/yingchen/cs380/point_checksum/libjpeg-turbo/build/CMakeFiles/CheckTypeSize/UNSIGNED_LONG.c
+Linking C executable cmTC_aafbb
+/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_aafbb.dir/link.txt --verbose=1
+/usr/bin/cc      -rdynamic CMakeFiles/cmTC_aafbb.dir/UNSIGNED_LONG.c.o  -o cmTC_aafbb 
+make[1]: Leaving directory '/home/yingchen/Documents/yingchen/cs380/point_checksum/libjpeg-turbo/build/CMakeFiles/CMakeTmp'
+
+
+
+Performing C SOURCE FILE Test HAVE_BUILTIN_CTZL succeeded with the following output:
+Change Dir: /home/yingchen/Documents/yingchen/cs380/point_checksum/libjpeg-turbo/build/CMakeFiles/CMakeTmp
+
+Run Build Command(s):/usr/bin/make cmTC_620e5/fast && /usr/bin/make -f CMakeFiles/cmTC_620e5.dir/build.make CMakeFiles/cmTC_620e5.dir/build
+make[1]: Entering directory '/home/yingchen/Documents/yingchen/cs380/point_checksum/libjpeg-turbo/build/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_620e5.dir/src.c.o
+/usr/bin/cc   -DHAVE_BUILTIN_CTZL   -o CMakeFiles/cmTC_620e5.dir/src.c.o   -c /home/yingchen/Documents/yingchen/cs380/point_checksum/libjpeg-turbo/build/CMakeFiles/CMakeTmp/src.c
+Linking C executable cmTC_620e5
+/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_620e5.dir/link.txt --verbose=1
+/usr/bin/cc  -DHAVE_BUILTIN_CTZL    -rdynamic CMakeFiles/cmTC_620e5.dir/src.c.o  -o cmTC_620e5 
+make[1]: Leaving directory '/home/yingchen/Documents/yingchen/cs380/point_checksum/libjpeg-turbo/build/CMakeFiles/CMakeTmp'
+
+
+Source file was:
+int main(int argc, char **argv) { unsigned long a = argc;  return __builtin_ctzl(a); }
+Determining if files locale.h exist passed with the following output:
+Change Dir: /home/yingchen/Documents/yingchen/cs380/point_checksum/libjpeg-turbo/build/CMakeFiles/CMakeTmp
+
+Run Build Command(s):/usr/bin/make cmTC_3af85/fast && /usr/bin/make -f CMakeFiles/cmTC_3af85.dir/build.make CMakeFiles/cmTC_3af85.dir/build
+make[1]: Entering directory '/home/yingchen/Documents/yingchen/cs380/point_checksum/libjpeg-turbo/build/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_3af85.dir/HAVE_LOCALE_H.c.o
+/usr/bin/cc    -o CMakeFiles/cmTC_3af85.dir/HAVE_LOCALE_H.c.o   -c /home/yingchen/Documents/yingchen/cs380/point_checksum/libjpeg-turbo/build/CMakeFiles/CheckIncludeFiles/HAVE_LOCALE_H.c
+Linking C executable cmTC_3af85
+/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_3af85.dir/link.txt --verbose=1
+/usr/bin/cc      -rdynamic CMakeFiles/cmTC_3af85.dir/HAVE_LOCALE_H.c.o  -o cmTC_3af85 
+make[1]: Leaving directory '/home/yingchen/Documents/yingchen/cs380/point_checksum/libjpeg-turbo/build/CMakeFiles/CMakeTmp'
+
+
+
+Determining if files stdlib.h exist passed with the following output:
+Change Dir: /home/yingchen/Documents/yingchen/cs380/point_checksum/libjpeg-turbo/build/CMakeFiles/CMakeTmp
+
+Run Build Command(s):/usr/bin/make cmTC_47d04/fast && /usr/bin/make -f CMakeFiles/cmTC_47d04.dir/build.make CMakeFiles/cmTC_47d04.dir/build
+make[1]: Entering directory '/home/yingchen/Documents/yingchen/cs380/point_checksum/libjpeg-turbo/build/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_47d04.dir/HAVE_STDLIB_H.c.o
+/usr/bin/cc    -o CMakeFiles/cmTC_47d04.dir/HAVE_STDLIB_H.c.o   -c /home/yingchen/Documents/yingchen/cs380/point_checksum/libjpeg-turbo/build/CMakeFiles/CheckIncludeFiles/HAVE_STDLIB_H.c
+Linking C executable cmTC_47d04
+/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_47d04.dir/link.txt --verbose=1
+/usr/bin/cc      -rdynamic CMakeFiles/cmTC_47d04.dir/HAVE_STDLIB_H.c.o  -o cmTC_47d04 
+make[1]: Leaving directory '/home/yingchen/Documents/yingchen/cs380/point_checksum/libjpeg-turbo/build/CMakeFiles/CMakeTmp'
+
+
+
+Determining if files sys/types.h exist passed with the following output:
+Change Dir: /home/yingchen/Documents/yingchen/cs380/point_checksum/libjpeg-turbo/build/CMakeFiles/CMakeTmp
+
+Run Build Command(s):/usr/bin/make cmTC_3693c/fast && /usr/bin/make -f CMakeFiles/cmTC_3693c.dir/build.make CMakeFiles/cmTC_3693c.dir/build
+make[1]: Entering directory '/home/yingchen/Documents/yingchen/cs380/point_checksum/libjpeg-turbo/build/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_3693c.dir/NEED_SYS_TYPES_H.c.o
+/usr/bin/cc    -o CMakeFiles/cmTC_3693c.dir/NEED_SYS_TYPES_H.c.o   -c /home/yingchen/Documents/yingchen/cs380/point_checksum/libjpeg-turbo/build/CMakeFiles/CheckIncludeFiles/NEED_SYS_TYPES_H.c
+Linking C executable cmTC_3693c
+/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_3693c.dir/link.txt --verbose=1
+/usr/bin/cc      -rdynamic CMakeFiles/cmTC_3693c.dir/NEED_SYS_TYPES_H.c.o  -o cmTC_3693c 
+make[1]: Leaving directory '/home/yingchen/Documents/yingchen/cs380/point_checksum/libjpeg-turbo/build/CMakeFiles/CMakeTmp'
+
+
+
+Determining if the memset exist passed with the following output:
+Change Dir: /home/yingchen/Documents/yingchen/cs380/point_checksum/libjpeg-turbo/build/CMakeFiles/CMakeTmp
+
+Run Build Command(s):/usr/bin/make cmTC_fbd13/fast && /usr/bin/make -f CMakeFiles/cmTC_fbd13.dir/build.make CMakeFiles/cmTC_fbd13.dir/build
+make[1]: Entering directory '/home/yingchen/Documents/yingchen/cs380/point_checksum/libjpeg-turbo/build/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_fbd13.dir/CheckSymbolExists.c.o
+/usr/bin/cc    -o CMakeFiles/cmTC_fbd13.dir/CheckSymbolExists.c.o   -c /home/yingchen/Documents/yingchen/cs380/point_checksum/libjpeg-turbo/build/CMakeFiles/CMakeTmp/CheckSymbolExists.c
+Linking C executable cmTC_fbd13
+/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_fbd13.dir/link.txt --verbose=1
+/usr/bin/cc      -rdynamic CMakeFiles/cmTC_fbd13.dir/CheckSymbolExists.c.o  -o cmTC_fbd13 
+make[1]: Leaving directory '/home/yingchen/Documents/yingchen/cs380/point_checksum/libjpeg-turbo/build/CMakeFiles/CMakeTmp'
+
+
+File /home/yingchen/Documents/yingchen/cs380/point_checksum/libjpeg-turbo/build/CMakeFiles/CMakeTmp/CheckSymbolExists.c:
+/* */
+#include <string.h>
+
+int main(int argc, char** argv)
+{
+  (void)argv;
+#ifndef memset
+  return ((int*)(&memset))[argc];
+#else
+  (void)argc;
+  return 0;
+#endif
+}
+Determining if the memcpy exist passed with the following output:
+Change Dir: /home/yingchen/Documents/yingchen/cs380/point_checksum/libjpeg-turbo/build/CMakeFiles/CMakeTmp
+
+Run Build Command(s):/usr/bin/make cmTC_810db/fast && /usr/bin/make -f CMakeFiles/cmTC_810db.dir/build.make CMakeFiles/cmTC_810db.dir/build
+make[1]: Entering directory '/home/yingchen/Documents/yingchen/cs380/point_checksum/libjpeg-turbo/build/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_810db.dir/CheckSymbolExists.c.o
+/usr/bin/cc    -o CMakeFiles/cmTC_810db.dir/CheckSymbolExists.c.o   -c /home/yingchen/Documents/yingchen/cs380/point_checksum/libjpeg-turbo/build/CMakeFiles/CMakeTmp/CheckSymbolExists.c
+Linking C executable cmTC_810db
+/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_810db.dir/link.txt --verbose=1
+/usr/bin/cc      -rdynamic CMakeFiles/cmTC_810db.dir/CheckSymbolExists.c.o  -o cmTC_810db 
+make[1]: Leaving directory '/home/yingchen/Documents/yingchen/cs380/point_checksum/libjpeg-turbo/build/CMakeFiles/CMakeTmp'
+
+
+File /home/yingchen/Documents/yingchen/cs380/point_checksum/libjpeg-turbo/build/CMakeFiles/CMakeTmp/CheckSymbolExists.c:
+/* */
+#include <string.h>
+
+int main(int argc, char** argv)
+{
+  (void)argv;
+#ifndef memcpy
+  return ((int*)(&memcpy))[argc];
+#else
+  (void)argc;
+  return 0;
+#endif
+}
+Determining size of unsigned char passed with the following output:
+Change Dir: /home/yingchen/Documents/yingchen/cs380/point_checksum/libjpeg-turbo/build/CMakeFiles/CMakeTmp
+
+Run Build Command(s):/usr/bin/make cmTC_4aadf/fast && /usr/bin/make -f CMakeFiles/cmTC_4aadf.dir/build.make CMakeFiles/cmTC_4aadf.dir/build
+make[1]: Entering directory '/home/yingchen/Documents/yingchen/cs380/point_checksum/libjpeg-turbo/build/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_4aadf.dir/UNSIGNED_CHAR.c.o
+/usr/bin/cc    -o CMakeFiles/cmTC_4aadf.dir/UNSIGNED_CHAR.c.o   -c /home/yingchen/Documents/yingchen/cs380/point_checksum/libjpeg-turbo/build/CMakeFiles/CheckTypeSize/UNSIGNED_CHAR.c
+Linking C executable cmTC_4aadf
+/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_4aadf.dir/link.txt --verbose=1
+/usr/bin/cc      -rdynamic CMakeFiles/cmTC_4aadf.dir/UNSIGNED_CHAR.c.o  -o cmTC_4aadf 
+make[1]: Leaving directory '/home/yingchen/Documents/yingchen/cs380/point_checksum/libjpeg-turbo/build/CMakeFiles/CMakeTmp'
+
+
+
+Determining size of unsigned short passed with the following output:
+Change Dir: /home/yingchen/Documents/yingchen/cs380/point_checksum/libjpeg-turbo/build/CMakeFiles/CMakeTmp
+
+Run Build Command(s):/usr/bin/make cmTC_bccab/fast && /usr/bin/make -f CMakeFiles/cmTC_bccab.dir/build.make CMakeFiles/cmTC_bccab.dir/build
+make[1]: Entering directory '/home/yingchen/Documents/yingchen/cs380/point_checksum/libjpeg-turbo/build/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_bccab.dir/UNSIGNED_SHORT.c.o
+/usr/bin/cc    -o CMakeFiles/cmTC_bccab.dir/UNSIGNED_SHORT.c.o   -c /home/yingchen/Documents/yingchen/cs380/point_checksum/libjpeg-turbo/build/CMakeFiles/CheckTypeSize/UNSIGNED_SHORT.c
+Linking C executable cmTC_bccab
+/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_bccab.dir/link.txt --verbose=1
+/usr/bin/cc      -rdynamic CMakeFiles/cmTC_bccab.dir/UNSIGNED_SHORT.c.o  -o cmTC_bccab 
+make[1]: Leaving directory '/home/yingchen/Documents/yingchen/cs380/point_checksum/libjpeg-turbo/build/CMakeFiles/CMakeTmp'
+
+
+
+Performing C SOURCE FILE Test INCOMPLETE_TYPES succeeded with the following output:
+Change Dir: /home/yingchen/Documents/yingchen/cs380/point_checksum/libjpeg-turbo/build/CMakeFiles/CMakeTmp
+
+Run Build Command(s):/usr/bin/make cmTC_d4466/fast && /usr/bin/make -f CMakeFiles/cmTC_d4466.dir/build.make CMakeFiles/cmTC_d4466.dir/build
+make[1]: Entering directory '/home/yingchen/Documents/yingchen/cs380/point_checksum/libjpeg-turbo/build/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_d4466.dir/src.c.o
+/usr/bin/cc   -DINCOMPLETE_TYPES   -o CMakeFiles/cmTC_d4466.dir/src.c.o   -c /home/yingchen/Documents/yingchen/cs380/point_checksum/libjpeg-turbo/build/CMakeFiles/CMakeTmp/src.c
+Linking C executable cmTC_d4466
+/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_d4466.dir/link.txt --verbose=1
+/usr/bin/cc  -DINCOMPLETE_TYPES    -rdynamic CMakeFiles/cmTC_d4466.dir/src.c.o  -o cmTC_d4466 
+make[1]: Leaving directory '/home/yingchen/Documents/yingchen/cs380/point_checksum/libjpeg-turbo/build/CMakeFiles/CMakeTmp'
+
+
+Source file was:
+int main(void) { typedef struct undefined_structure *undef_struct_ptr;  undef_struct_ptr ptr = 0;  return ptr != 0; }
+Performing C SOURCE FILE Test INLINE_WORKS succeeded with the following output:
+Change Dir: /home/yingchen/Documents/yingchen/cs380/point_checksum/libjpeg-turbo/build/CMakeFiles/CMakeTmp
+
+Run Build Command(s):/usr/bin/make cmTC_03504/fast && /usr/bin/make -f CMakeFiles/cmTC_03504.dir/build.make CMakeFiles/cmTC_03504.dir/build
+make[1]: Entering directory '/home/yingchen/Documents/yingchen/cs380/point_checksum/libjpeg-turbo/build/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_03504.dir/src.c.o
+/usr/bin/cc   -DINLINE_WORKS   -o CMakeFiles/cmTC_03504.dir/src.c.o   -c /home/yingchen/Documents/yingchen/cs380/point_checksum/libjpeg-turbo/build/CMakeFiles/CMakeTmp/src.c
+Linking C executable cmTC_03504
+/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_03504.dir/link.txt --verbose=1
+/usr/bin/cc  -DINLINE_WORKS    -rdynamic CMakeFiles/cmTC_03504.dir/src.c.o  -o cmTC_03504 
+make[1]: Leaving directory '/home/yingchen/Documents/yingchen/cs380/point_checksum/libjpeg-turbo/build/CMakeFiles/CMakeTmp'
+
+
+Source file was:
+__inline__ __attribute__((always_inline)) static int foo(void) { return 0; } int main(void) { return foo(); }
+Performing C SOURCE FILE Test HAVE_THREAD_LOCAL succeeded with the following output:
+Change Dir: /home/yingchen/Documents/yingchen/cs380/point_checksum/libjpeg-turbo/build/CMakeFiles/CMakeTmp
+
+Run Build Command(s):/usr/bin/make cmTC_a7eb1/fast && /usr/bin/make -f CMakeFiles/cmTC_a7eb1.dir/build.make CMakeFiles/cmTC_a7eb1.dir/build
+make[1]: Entering directory '/home/yingchen/Documents/yingchen/cs380/point_checksum/libjpeg-turbo/build/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_a7eb1.dir/src.c.o
+/usr/bin/cc   -DHAVE_THREAD_LOCAL   -o CMakeFiles/cmTC_a7eb1.dir/src.c.o   -c /home/yingchen/Documents/yingchen/cs380/point_checksum/libjpeg-turbo/build/CMakeFiles/CMakeTmp/src.c
+Linking C executable cmTC_a7eb1
+/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_a7eb1.dir/link.txt --verbose=1
+/usr/bin/cc  -DHAVE_THREAD_LOCAL    -rdynamic CMakeFiles/cmTC_a7eb1.dir/src.c.o  -o cmTC_a7eb1 
+make[1]: Leaving directory '/home/yingchen/Documents/yingchen/cs380/point_checksum/libjpeg-turbo/build/CMakeFiles/CMakeTmp'
+
+
+Source file was:
+__thread int i;  int main(void) { i = 0;  return i; }
+Performing C SOURCE FILE Test HAVE_VERSION_SCRIPT succeeded with the following output:
+Change Dir: /home/yingchen/Documents/yingchen/cs380/point_checksum/libjpeg-turbo/build/CMakeFiles/CMakeTmp
+
+Run Build Command(s):/usr/bin/make cmTC_e53e6/fast && /usr/bin/make -f CMakeFiles/cmTC_e53e6.dir/build.make CMakeFiles/cmTC_e53e6.dir/build
+make[1]: Entering directory '/home/yingchen/Documents/yingchen/cs380/point_checksum/libjpeg-turbo/build/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_e53e6.dir/src.c.o
+/usr/bin/cc   -DHAVE_VERSION_SCRIPT -Wl,--version-script,/home/yingchen/Documents/yingchen/cs380/point_checksum/libjpeg-turbo/build/conftest.map   -o CMakeFiles/cmTC_e53e6.dir/src.c.o   -c /home/yingchen/Documents/yingchen/cs380/point_checksum/libjpeg-turbo/build/CMakeFiles/CMakeTmp/src.c
+Linking C executable cmTC_e53e6
+/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_e53e6.dir/link.txt --verbose=1
+/usr/bin/cc  -DHAVE_VERSION_SCRIPT -Wl,--version-script,/home/yingchen/Documents/yingchen/cs380/point_checksum/libjpeg-turbo/build/conftest.map    -rdynamic CMakeFiles/cmTC_e53e6.dir/src.c.o  -o cmTC_e53e6 
+make[1]: Leaving directory '/home/yingchen/Documents/yingchen/cs380/point_checksum/libjpeg-turbo/build/CMakeFiles/CMakeTmp'
+
+
+Source file was:
+int main(void) { return 0; }
+Looking for a ASM_NASM compiler passed with the following output:
+-- The ASM_NASM compiler identification is NASM
+-- Found assembler: /usr/bin/nasm
+-- Configuring done
+-- Generating done
+-- Build files have been written to: /home/yingchen/Documents/yingchen/cs380/point_checksum/libjpeg-turbo/build/simd/CMakeFiles/CheckASM_NASM
+
+Checking whether the ASM_NASM compiler is NASM using "-v" matched "(NASM version)":
+NASM version 2.14.02
