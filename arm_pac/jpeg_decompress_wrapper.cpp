@@ -15,11 +15,7 @@ Jpeg_decompress::Jpeg_decompress()
     id = Insert_newDoc();
     cinfo = (struct jpeg_decompress_struct *)malloc(sizeof(jpeg_decompress_struct));
     Insert_newBlock_withID(id, (uintptr_t)cinfo, (size_t)sizeof(jpeg_decompress_struct));
-    uint8_t* hash_result = compute_Hash(id);
-    printf("hello world haha \n");
-    printf("hash re %d\n", hash_result[0]);
-    save_hash(hash_result);
-
+    compute_Hash(id, 0);
     printf("cinfo %p\n", cinfo);
 }
 
@@ -32,15 +28,9 @@ void Jpeg_decompress::jpeg_create_decompress_wrapped() {
 
     
     assert(cinfo->err->reset_error_mgr != NULL);
-    
-    uint8_t* hash_result = compute_Hash(id);
-    bool compare_result = compare_hash(hash_result);
-    assert(compare_result == 1);
+    compute_Hash(id, 1);    
     jpeg_create_decompress(cinfo);
-    hash_result = compute_Hash(id);
-    save_hash(hash_result);
-    assert(cinfo->err->reset_error_mgr != NULL);
-
+    compute_Hash(id, 0);
     // Perform checks
     assert(cinfo->global_state == DSTATE_START);
     assert(cinfo->progress == NULL);
@@ -67,14 +57,9 @@ void Jpeg_decompress::jpeg_stdio_src_wrapped(FILE *infile) {
         src = cinfo->src;
     }
 
-    uint8_t* hash_result = compute_Hash(id);
-    bool compare_result = compare_hash(hash_result);
-    assert(compare_result == 1);
-    
+    compute_Hash(id, 1); 
     jpeg_stdio_src(cinfo, infile);
-
-    hash_result = compute_Hash(id);
-    save_hash(hash_result);
+    compute_Hash(id, 0);
     
 
     // Perform checks
@@ -102,14 +87,9 @@ int Jpeg_decompress::jpeg_read_header_wrapped(boolean require_image) {
     
     int global_state = cinfo->global_state;
 
-    uint8_t* hash_result = compute_Hash(id);
-    bool compare_result = compare_hash(hash_result);
-    assert(compare_result == 1);   
-
+    compute_Hash(id, 1);
     int retcode = jpeg_read_header(cinfo, require_image);
-
-    hash_result = compute_Hash(id);
-    save_hash(hash_result);
+    compute_Hash(id, 0);
    
 
     // Perform checks
@@ -136,14 +116,9 @@ boolean Jpeg_decompress::jpeg_start_decompress_wrapped() {
     boolean buffered_image = cinfo->buffered_image;
     boolean raw_data_out = cinfo->raw_data_out;
     
-    uint8_t* hash_result = compute_Hash(id);
-    bool compare_result = compare_hash(hash_result);
-    assert(compare_result == 1);   
-
+    compute_Hash(id, 1);
     boolean output = jpeg_start_decompress(cinfo);
-
-    hash_result = compute_Hash(id);
-    save_hash(hash_result);  
+    compute_Hash(id, 0);
 
     if (buffered_image) {
         assert(cinfo->global_state == DSTATE_BUFIMAGE && output);
@@ -163,14 +138,9 @@ boolean Jpeg_decompress::jpeg_start_decompress_wrapped() {
 JDIMENSION Jpeg_decompress::jpeg_read_scanlines_wrapped(JSAMPARRAY scanlines, JDIMENSION max_lines) {
     JDIMENSION output_scanline = cinfo->output_scanline;
 
-    uint8_t* hash_result = compute_Hash(id);
-    bool compare_result = compare_hash(hash_result);
-    assert(compare_result == 1);   
-
+    compute_Hash(id, 1);
     JDIMENSION row_ctr = jpeg_read_scanlines(cinfo, scanlines, max_lines);
-
-    hash_result = compute_Hash(id);
-    save_hash(hash_result);  
+    compute_Hash(id, 0);
 
     assert(row_ctr <= max_lines);
     assert(cinfo->output_scanline == (row_ctr + output_scanline));
@@ -181,14 +151,9 @@ JDIMENSION Jpeg_decompress::jpeg_read_scanlines_wrapped(JSAMPARRAY scanlines, JD
 boolean Jpeg_decompress::jpeg_finish_decompress_wrapped() {
     jpeg_memory_mgr *mem = cinfo->mem;
 
-    uint8_t* hash_result = compute_Hash(id);
-    bool compare_result = compare_hash(hash_result);
-    assert(compare_result == 1);   
-
+    compute_Hash(id, 1);
     boolean output = jpeg_finish_decompress(cinfo);
-
-    hash_result = compute_Hash(id);
-    save_hash(hash_result);  
+    compute_Hash(id, 0);
 
 
     if (mem != NULL)
@@ -199,15 +164,10 @@ boolean Jpeg_decompress::jpeg_finish_decompress_wrapped() {
 
 void Jpeg_decompress::jpeg_destroy_wrapped() {
 
-    uint8_t* hash_result = compute_Hash(id);
-    bool compare_result = compare_hash(hash_result);
-    assert(compare_result == 1);   
-
+    compute_Hash(id, 1);
 
     jpeg_destroy_decompress(cinfo);
-
-    hash_result = compute_Hash(id);
-    save_hash(hash_result);  
+    compute_Hash(id, 0);
 
 
     assert(cinfo->mem == NULL);

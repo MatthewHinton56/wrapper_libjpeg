@@ -7,6 +7,7 @@
 #include <stdbool.h>
 #include <unordered_map>
 #include "sha1_arm.h"
+#include <assert.h>
 using namespace std;
 int curr_id = 0;
 unordered_map<int, unordered_map<uintptr_t, size_t>> my_Documentation; 
@@ -37,9 +38,9 @@ void Insert_newBlock_withID(int id, uintptr_t pointer_addr, size_t size) {
 //return the id that holds this lookupaddr
 uint64_t holds_address(uintptr_t lookup_addr) {
     for (auto it_doc : my_Documentation){
-        //printf("my id is: %d\n", it_doc.first);
+        printf("my id is: %d\n", it_doc.first);
         for (auto it_map : it_doc.second){
-            //printf("it_map %0x, %ld\n", it_map.first, it_map.second);
+            printf("it_map %0x, %ld\n", it_map.first, it_map.second);
             if (it_map.first <= lookup_addr && (it_map.first + it_map.second) > lookup_addr){
                 return it_doc.first;
             }
@@ -62,9 +63,10 @@ void free_newBlock(uint64_t my_pointer, uintptr_t pointer_addr){
     my_Documentation[find_id].erase(pointer_addr); 
 }
 
-uint8_t* compute_Hash(int id){
-    uint8_t *hash_result = (uint8_t*)malloc(8 * sizeof(uint8_t));
-    //uint8_t hash_result[8];
+void compute_Hash(int id, int compare){
+
+    //uint8_t *hash_result = (uint8_t*)malloc(8 * sizeof(uint8_t));
+    uint8_t hash_result[8];
 
     int number_Block = my_Documentation[id].size();
     unordered_map<uintptr_t, size_t> my_map = my_Documentation[id];
@@ -114,8 +116,10 @@ uint8_t* compute_Hash(int id){
      const uint8_t b7 = (uint8_t)(state[1] >>  8);
      const uint8_t b8 = (uint8_t)(state[1] >>  0);
 
-     printf("SHA1 hash of empty message: ");
-     printf("%02X%02X%02X%02X%02X%02X%02X%02X\n",b1, b2, b3, b4, b5, b6, b7, b8);
+//     printf("SHA1 hash of empty message: ");
+//     printf("%02X%02X%02X%02X%02X%02X%02X%02X\n",b1, b2, b3, b4, b5, b6, b7, b8);
+     
+     
      hash_result[0] = b1;
      hash_result[1] = b2;
      hash_result[2] = b3;
@@ -123,37 +127,31 @@ uint8_t* compute_Hash(int id){
      hash_result[4] = b5;
      hash_result[5] = b6; 
      hash_result[6] = b7;
-     hash_result[7] = b8;                 
-     printf("saved hash %d\n", hash_result[0]);     
-     return hash_result;
-}
-
-void save_hash(uint8_t* hash_result){
-    printf("saved hash %d\n", hash_result[0]);
-    saved_b1 = hash_result[0];
-    saved_b2 = hash_result[1];
-    saved_b3 = hash_result[2];
-    saved_b4 = hash_result[3];    
-    saved_b5 = hash_result[4];    
-    saved_b6 = hash_result[5];    
-    saved_b7 = hash_result[6];    
-    saved_b8 = hash_result[7];
-    printf("saving SHA1 hash of empty message: ");
-    printf("%02X%02X%02X%02X%02X%02X%02X%02X\n",hash_result[0], hash_result[1], hash_result[2], hash_result[3], hash_result[4], hash_result[5], hash_result[6], hash_result[7]);
-         
-}
-
-bool compare_hash(uint8_t* hash_result){
-    printf("saved SHA1 hash of empty message: ");
-    printf("%02X%02X%02X%02X%02X%02X%02X%02X\n",saved_b1, saved_b2, saved_b3, saved_b4, saved_b5, saved_b6, saved_b7, saved_b8);
-    
-    printf("compared newly computed SHA1 hash of empty message: ");
-    printf("%02X%02X%02X%02X%02X%02X%02X%02X\n",hash_result[0], hash_result[1], hash_result[2], hash_result[3], hash_result[4], hash_result[5], hash_result[6], hash_result[7]);
+     hash_result[7] = b8;
      
-    bool same = (saved_b1 == hash_result[0])&&(saved_b2 == hash_result[1])&&(saved_b3 == hash_result[2])&&(saved_b4 == hash_result[3])&&(saved_b5 == hash_result[4])&&(saved_b6 == hash_result[5])&&(saved_b7 == hash_result[6])&&(saved_b8 == hash_result[7]);
-    
-    return same;
+     if(compare==1){
+//	printf("SHA1 hash of empty message: ");
+//	printf("%02X%02X%02X%02X%02X%02X%02X%02X\n",hash_result[0], hash_result[1], hash_result[2], hash_result[3], hash_result[4], hash_result[5], hash_result[6], hash_result[7]);  
+//	printf("saved SHA1 hash of empty message: ");
+//	printf("%02X%02X%02X%02X%02X%02X%02X%02X\n",saved_b1, saved_b2, saved_b3, saved_b4, saved_b5, saved_b6, saved_b7, saved_b8);
+	bool same = (saved_b1 == hash_result[0])&&(saved_b2 == hash_result[1])&&(saved_b3 == hash_result[2])&&(saved_b4 == hash_result[3])&&(saved_b5 == hash_result[4])&&(saved_b6 == hash_result[5])&&(saved_b7 == hash_result[6])&&(saved_b8 == hash_result[7]);
+	assert(same==1);
+     }else{
+        saved_b1 = hash_result[0];
+        saved_b2 = hash_result[1];
+        saved_b3 = hash_result[2];
+        saved_b4 = hash_result[3];    
+        saved_b5 = hash_result[4];    
+        saved_b6 = hash_result[5];    
+        saved_b7 = hash_result[6];    
+        saved_b8 = hash_result[7]; 
+  //      printf("SHA1 hash of empty message: ");
+  //      printf("%02X%02X%02X%02X%02X%02X%02X%02X\n",saved_b1, saved_b2, saved_b3, saved_b4, saved_b5, saved_b6, saved_b7, saved_b8);    
+     } 
+         
+ 
 }
+
 
 
 

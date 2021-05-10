@@ -17,7 +17,7 @@ int main(int argc, char **argv) {
     
     FILE *input_file = fopen(argv[1], "rb");
     printf("hello world\n");
-    cinfo.get_cinfo()->err = jpeg_std_error_wrapped(cinfo.get_id());
+    jpeg_std_error_wrapped(cinfo.get_cinfo(),cinfo.get_id());
     printf("hello world\n");
     cinfo.jpeg_create_decompress_wrapped();
     

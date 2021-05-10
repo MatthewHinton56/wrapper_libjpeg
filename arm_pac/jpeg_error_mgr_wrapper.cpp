@@ -9,22 +9,16 @@
 #include "jpeg_error_mgr_wrapper.h"
 #include "Documentor.h"
 
-struct jpeg_error_mgr *jpeg_std_error_wrapped(int id) {
-    
+struct jpeg_error_mgr *jpeg_std_error_wrapped(struct jpeg_decompress_struct * my_cinfo, int id) { 
+    compute_Hash(id, 1);
     struct jpeg_error_mgr* jerr = (struct jpeg_error_mgr*)malloc(sizeof(jpeg_error_mgr));
     Insert_newBlock_withID(id, (uintptr_t)jerr, (size_t)sizeof(jpeg_error_mgr));
     
-    uint8_t* hash_result = compute_Hash(id);
-    bool compare_result = compare_hash(hash_result);
-    assert(compare_result == 1);   
-
     
     struct jpeg_error_mgr *err = jpeg_std_error(jerr);
-    
-    hash_result = compute_Hash(id);
-    save_hash(hash_result);  
+    my_cinfo->err = err;    
 
-    
+    compute_Hash(id, 0);
     assert(err == jerr); // Check it returned the correct pointer
 
     // Perform checks
