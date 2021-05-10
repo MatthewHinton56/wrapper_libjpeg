@@ -16,7 +16,10 @@ Jpeg_decompress::Jpeg_decompress()
     cinfo = (struct jpeg_decompress_struct *)malloc(sizeof(jpeg_decompress_struct));
     Insert_newBlock_withID(id, (uintptr_t)cinfo, (size_t)sizeof(jpeg_decompress_struct));
     uint8_t* hash_result = compute_Hash(id);
+    printf("hello world haha \n");
+    printf("hash re %d\n", hash_result[0]);
     save_hash(hash_result);
+
     printf("cinfo %p\n", cinfo);
 }
 

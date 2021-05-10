@@ -6,9 +6,7 @@
 
 #IncludeRegexTransform: 
 
-../cderror.h
-
-../cdjpeg.h
+..//cdjpeg.h
 jinclude.h
 ../jinclude.h
 jpeglib.h
@@ -16,6 +14,8 @@ jpeglib.h
 jerror.h
 ../jerror.h
 cderror.h
+../cderror.h
+
 ../cderror.h
 
 ../jerror.h
@@ -50,7 +50,13 @@ jpegint.h
 jerror.h
 ../jerror.h
 
-/home/yingchen/Documents/yingchen/cs380/point_checksum/libjpeg-turbo/tjbench.c
+/home/yingchen/wrapper_libjpeg/arm_pac/libjpeg-turbo/./tjutil.h
+stdio.h
+-
+
+/home/yingchen/wrapper_libjpeg/arm_pac/libjpeg-turbo/./turbojpeg.h
+
+/home/yingchen/wrapper_libjpeg/arm_pac/libjpeg-turbo/tjbench.c
 stdio.h
 -
 stdlib.h
@@ -68,27 +74,25 @@ limits.h
 cdjpeg.h
 -
 ./tjutil.h
-/home/yingchen/Documents/yingchen/cs380/point_checksum/libjpeg-turbo/tjutil.h
+/home/yingchen/wrapper_libjpeg/arm_pac/libjpeg-turbo/./tjutil.h
 ./turbojpeg.h
-/home/yingchen/Documents/yingchen/cs380/point_checksum/libjpeg-turbo/turbojpeg.h
+/home/yingchen/wrapper_libjpeg/arm_pac/libjpeg-turbo/./turbojpeg.h
 
-/home/yingchen/Documents/yingchen/cs380/point_checksum/libjpeg-turbo/tjutil.c
+/home/yingchen/wrapper_libjpeg/arm_pac/libjpeg-turbo/tjutil.c
 windows.h
 -
 tjutil.h
-/home/yingchen/Documents/yingchen/cs380/point_checksum/libjpeg-turbo/tjutil.h
+/home/yingchen/wrapper_libjpeg/arm_pac/libjpeg-turbo/tjutil.h
 stdlib.h
 -
 sys/time.h
 -
 tjutil.h
-/home/yingchen/Documents/yingchen/cs380/point_checksum/libjpeg-turbo/tjutil.h
+/home/yingchen/wrapper_libjpeg/arm_pac/libjpeg-turbo/tjutil.h
 
-/home/yingchen/Documents/yingchen/cs380/point_checksum/libjpeg-turbo/tjutil.h
+/home/yingchen/wrapper_libjpeg/arm_pac/libjpeg-turbo/tjutil.h
 stdio.h
 -
-
-/home/yingchen/Documents/yingchen/cs380/point_checksum/libjpeg-turbo/turbojpeg.h
 
 jconfig.h
 

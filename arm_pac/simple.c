@@ -16,8 +16,9 @@ int main(int argc, char **argv) {
     Jpeg_decompress cinfo;
     
     FILE *input_file = fopen(argv[1], "rb");
-
+    printf("hello world\n");
     cinfo.get_cinfo()->err = jpeg_std_error_wrapped(cinfo.get_id());
+    printf("hello world\n");
     cinfo.jpeg_create_decompress_wrapped();
     
     cinfo.jpeg_stdio_src_wrapped(input_file);

@@ -6,7 +6,7 @@
 
 #IncludeRegexTransform: 
 
-../jinclude.h
+..//jinclude.h
 jconfig.h
 ../jconfig.h
 stddef.h
@@ -22,11 +22,7 @@ strings.h
 string.h
 -
 
-../jmorecfg.h
-
-../jpegint.h
-
-../jpeglib.h
+..//jpeglib.h
 jconfig.h
 ../jconfig.h
 jmorecfg.h
@@ -36,11 +32,15 @@ jpegint.h
 jerror.h
 ../jerror.h
 
-/home/yingchen/Documents/yingchen/cs380/point_checksum/libjpeg-turbo/cderror.h
+../jmorecfg.h
 
-/home/yingchen/Documents/yingchen/cs380/point_checksum/libjpeg-turbo/cdjpeg.c
+../jpegint.h
+
+/home/yingchen/wrapper_libjpeg/arm_pac/libjpeg-turbo/cderror.h
+
+/home/yingchen/wrapper_libjpeg/arm_pac/libjpeg-turbo/cdjpeg.c
 cdjpeg.h
-/home/yingchen/Documents/yingchen/cs380/point_checksum/libjpeg-turbo/cdjpeg.h
+/home/yingchen/wrapper_libjpeg/arm_pac/libjpeg-turbo/cdjpeg.h
 ctype.h
 -
 fcntl.h
@@ -48,31 +48,31 @@ fcntl.h
 io.h
 -
 
-/home/yingchen/Documents/yingchen/cs380/point_checksum/libjpeg-turbo/cdjpeg.h
+/home/yingchen/wrapper_libjpeg/arm_pac/libjpeg-turbo/cdjpeg.h
 jinclude.h
-/home/yingchen/Documents/yingchen/cs380/point_checksum/libjpeg-turbo/jinclude.h
+/home/yingchen/wrapper_libjpeg/arm_pac/libjpeg-turbo/jinclude.h
 jpeglib.h
-/home/yingchen/Documents/yingchen/cs380/point_checksum/libjpeg-turbo/jpeglib.h
+/home/yingchen/wrapper_libjpeg/arm_pac/libjpeg-turbo/jpeglib.h
 jerror.h
-/home/yingchen/Documents/yingchen/cs380/point_checksum/libjpeg-turbo/jerror.h
+/home/yingchen/wrapper_libjpeg/arm_pac/libjpeg-turbo/jerror.h
 cderror.h
-/home/yingchen/Documents/yingchen/cs380/point_checksum/libjpeg-turbo/cderror.h
+/home/yingchen/wrapper_libjpeg/arm_pac/libjpeg-turbo/cderror.h
 
-/home/yingchen/Documents/yingchen/cs380/point_checksum/libjpeg-turbo/cmyk.h
+/home/yingchen/wrapper_libjpeg/arm_pac/libjpeg-turbo/cmyk.h
 jinclude.h
 -
 jpeglib.h
 -
 jconfigint.h
-/home/yingchen/Documents/yingchen/cs380/point_checksum/libjpeg-turbo/jconfigint.h
+/home/yingchen/wrapper_libjpeg/arm_pac/libjpeg-turbo/jconfigint.h
 
-/home/yingchen/Documents/yingchen/cs380/point_checksum/libjpeg-turbo/djpeg.c
+/home/yingchen/wrapper_libjpeg/arm_pac/libjpeg-turbo/djpeg.c
 cdjpeg.h
-/home/yingchen/Documents/yingchen/cs380/point_checksum/libjpeg-turbo/cdjpeg.h
+/home/yingchen/wrapper_libjpeg/arm_pac/libjpeg-turbo/cdjpeg.h
 jversion.h
-/home/yingchen/Documents/yingchen/cs380/point_checksum/libjpeg-turbo/jversion.h
+/home/yingchen/wrapper_libjpeg/arm_pac/libjpeg-turbo/jversion.h
 jconfigint.h
-/home/yingchen/Documents/yingchen/cs380/point_checksum/libjpeg-turbo/jconfigint.h
+/home/yingchen/wrapper_libjpeg/arm_pac/libjpeg-turbo/jconfigint.h
 ctype.h
 -
 SIOUX.h
@@ -82,13 +82,13 @@ console.h
 console.h
 -
 cderror.h
-/home/yingchen/Documents/yingchen/cs380/point_checksum/libjpeg-turbo/cderror.h
+/home/yingchen/wrapper_libjpeg/arm_pac/libjpeg-turbo/cderror.h
 
-/home/yingchen/Documents/yingchen/cs380/point_checksum/libjpeg-turbo/jerror.h
+/home/yingchen/wrapper_libjpeg/arm_pac/libjpeg-turbo/jerror.h
 
-/home/yingchen/Documents/yingchen/cs380/point_checksum/libjpeg-turbo/jinclude.h
+/home/yingchen/wrapper_libjpeg/arm_pac/libjpeg-turbo/jinclude.h
 jconfig.h
-/home/yingchen/Documents/yingchen/cs380/point_checksum/libjpeg-turbo/jconfig.h
+/home/yingchen/wrapper_libjpeg/arm_pac/libjpeg-turbo/jconfig.h
 stddef.h
 -
 stdlib.h
@@ -102,53 +102,53 @@ strings.h
 string.h
 -
 
-/home/yingchen/Documents/yingchen/cs380/point_checksum/libjpeg-turbo/jmorecfg.h
+/home/yingchen/wrapper_libjpeg/arm_pac/libjpeg-turbo/jmorecfg.h
 
-/home/yingchen/Documents/yingchen/cs380/point_checksum/libjpeg-turbo/jpegint.h
+/home/yingchen/wrapper_libjpeg/arm_pac/libjpeg-turbo/jpegint.h
 
-/home/yingchen/Documents/yingchen/cs380/point_checksum/libjpeg-turbo/jpeglib.h
+/home/yingchen/wrapper_libjpeg/arm_pac/libjpeg-turbo/jpeglib.h
 jconfig.h
-/home/yingchen/Documents/yingchen/cs380/point_checksum/libjpeg-turbo/jconfig.h
+/home/yingchen/wrapper_libjpeg/arm_pac/libjpeg-turbo/jconfig.h
 jmorecfg.h
-/home/yingchen/Documents/yingchen/cs380/point_checksum/libjpeg-turbo/jmorecfg.h
+/home/yingchen/wrapper_libjpeg/arm_pac/libjpeg-turbo/jmorecfg.h
 jpegint.h
-/home/yingchen/Documents/yingchen/cs380/point_checksum/libjpeg-turbo/jpegint.h
+/home/yingchen/wrapper_libjpeg/arm_pac/libjpeg-turbo/jpegint.h
 jerror.h
-/home/yingchen/Documents/yingchen/cs380/point_checksum/libjpeg-turbo/jerror.h
+/home/yingchen/wrapper_libjpeg/arm_pac/libjpeg-turbo/jerror.h
 
-/home/yingchen/Documents/yingchen/cs380/point_checksum/libjpeg-turbo/jversion.h
+/home/yingchen/wrapper_libjpeg/arm_pac/libjpeg-turbo/jversion.h
 
-/home/yingchen/Documents/yingchen/cs380/point_checksum/libjpeg-turbo/rdcolmap.c
+/home/yingchen/wrapper_libjpeg/arm_pac/libjpeg-turbo/rdcolmap.c
 cdjpeg.h
-/home/yingchen/Documents/yingchen/cs380/point_checksum/libjpeg-turbo/cdjpeg.h
+/home/yingchen/wrapper_libjpeg/arm_pac/libjpeg-turbo/cdjpeg.h
 
-/home/yingchen/Documents/yingchen/cs380/point_checksum/libjpeg-turbo/rdswitch.c
+/home/yingchen/wrapper_libjpeg/arm_pac/libjpeg-turbo/rdswitch.c
 cdjpeg.h
-/home/yingchen/Documents/yingchen/cs380/point_checksum/libjpeg-turbo/cdjpeg.h
+/home/yingchen/wrapper_libjpeg/arm_pac/libjpeg-turbo/cdjpeg.h
 ctype.h
 -
 
-/home/yingchen/Documents/yingchen/cs380/point_checksum/libjpeg-turbo/wrbmp.c
+/home/yingchen/wrapper_libjpeg/arm_pac/libjpeg-turbo/wrbmp.c
 cmyk.h
-/home/yingchen/Documents/yingchen/cs380/point_checksum/libjpeg-turbo/cmyk.h
+/home/yingchen/wrapper_libjpeg/arm_pac/libjpeg-turbo/cmyk.h
 cdjpeg.h
-/home/yingchen/Documents/yingchen/cs380/point_checksum/libjpeg-turbo/cdjpeg.h
+/home/yingchen/wrapper_libjpeg/arm_pac/libjpeg-turbo/cdjpeg.h
 jconfigint.h
-/home/yingchen/Documents/yingchen/cs380/point_checksum/libjpeg-turbo/jconfigint.h
+/home/yingchen/wrapper_libjpeg/arm_pac/libjpeg-turbo/jconfigint.h
 
-/home/yingchen/Documents/yingchen/cs380/point_checksum/libjpeg-turbo/wrgif.c
+/home/yingchen/wrapper_libjpeg/arm_pac/libjpeg-turbo/wrgif.c
 cdjpeg.h
-/home/yingchen/Documents/yingchen/cs380/point_checksum/libjpeg-turbo/cdjpeg.h
+/home/yingchen/wrapper_libjpeg/arm_pac/libjpeg-turbo/cdjpeg.h
 
-/home/yingchen/Documents/yingchen/cs380/point_checksum/libjpeg-turbo/wrppm.c
+/home/yingchen/wrapper_libjpeg/arm_pac/libjpeg-turbo/wrppm.c
 cmyk.h
-/home/yingchen/Documents/yingchen/cs380/point_checksum/libjpeg-turbo/cmyk.h
+/home/yingchen/wrapper_libjpeg/arm_pac/libjpeg-turbo/cmyk.h
 cdjpeg.h
-/home/yingchen/Documents/yingchen/cs380/point_checksum/libjpeg-turbo/cdjpeg.h
+/home/yingchen/wrapper_libjpeg/arm_pac/libjpeg-turbo/cdjpeg.h
 
-/home/yingchen/Documents/yingchen/cs380/point_checksum/libjpeg-turbo/wrtarga.c
+/home/yingchen/wrapper_libjpeg/arm_pac/libjpeg-turbo/wrtarga.c
 cdjpeg.h
-/home/yingchen/Documents/yingchen/cs380/point_checksum/libjpeg-turbo/cdjpeg.h
+/home/yingchen/wrapper_libjpeg/arm_pac/libjpeg-turbo/cdjpeg.h
 
 jconfig.h
 

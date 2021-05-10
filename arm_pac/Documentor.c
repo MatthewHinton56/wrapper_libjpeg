@@ -63,7 +63,8 @@ void free_newBlock(uint64_t my_pointer, uintptr_t pointer_addr){
 }
 
 uint8_t* compute_Hash(int id){
-    uint8_t hash_result[8];
+    uint8_t *hash_result = (uint8_t*)malloc(8 * sizeof(uint8_t));
+    //uint8_t hash_result[8];
 
     int number_Block = my_Documentation[id].size();
     unordered_map<uintptr_t, size_t> my_map = my_Documentation[id];
@@ -122,11 +123,13 @@ uint8_t* compute_Hash(int id){
      hash_result[4] = b5;
      hash_result[5] = b6; 
      hash_result[6] = b7;
-     hash_result[7] = b8;                             
+     hash_result[7] = b8;                 
+     printf("saved hash %d\n", hash_result[0]);     
      return hash_result;
 }
 
 void save_hash(uint8_t* hash_result){
+    printf("saved hash %d\n", hash_result[0]);
     saved_b1 = hash_result[0];
     saved_b2 = hash_result[1];
     saved_b3 = hash_result[2];
