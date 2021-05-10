@@ -1,0 +1,3 @@
+gcc -c wrapped_malloc.c
+g++ -march=armv8-a+crc+crypto -o simple jpeg_decompress_wrapper.cpp jpeg_error_mgr_wrapper.cpp  -Wl,--wrap,wmalloc -Wl,--wrap,wfree simple.c wrapped_malloc.o libturbojpeg.a Documentor.c sha1_arm.c -ggdb
+
