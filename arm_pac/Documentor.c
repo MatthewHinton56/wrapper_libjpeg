@@ -9,6 +9,7 @@
 #include "sha1_arm.h"
 #include <assert.h>
 #include <inttypes.h>
+#include <pthread.h>
 using namespace std;
 int curr_id = 0;
 unordered_map<int, unordered_map<uintptr_t, size_t>> my_Documentation;
@@ -22,6 +23,14 @@ uint8_t saved_b5=0;
 uint8_t saved_b6=0;
 uint8_t saved_b7=0;
 uint8_t saved_b8=0;
+
+typedef struct {
+    uint8_t hash_result[8];
+    (const uint8_t*) block_msg;
+    size_t length;
+} hash_struct;
+
+
 
 int Insert_newDoc() {
     int id=curr_id;
@@ -105,7 +114,20 @@ uintptr_t aut_add(uintptr_t my_pointer, uint64_t context){
     return result;
 }
 
-
+void hash_function(void* args){
+    hash_struct *actual_args = args;
+    uint32_t state[5] = {0x67452301, 0xEFCDAB89, 0x98BADCFE, 0x10325476, 0xC3D2E1F0};
+    sha1_process_arm(state, actual_args->block_msg, actual_args->length);
+    actual_args->hash_result[0] = (uint8_t)(state[0] >> 24);
+    actual_args->hash_result[1] = (uint8_t)(state[0] >> 16);
+    actual_args->hash_result[2] = (uint8_t)(state[0] >>  8);
+    actual_args->hash_result[3] = (uint8_t)(state[0] >>  0);
+    actual_args->hash_result[4] = (uint8_t)(state[1] >> 24);
+    actual_args->hash_result[5] = (uint8_t)(state[1] >> 16);
+    actual_args->hash_result[6] = (uint8_t)(state[1] >>  8);
+    actual_args->hash_result[7] = (uint8_t)(state[1] >>  0);
+    
+}
 
 void compute_Hash(int id, int compare){
 
@@ -117,9 +139,19 @@ void compute_Hash(int id, int compare){
     uint8_t* hash_sum = (uint8_t*)malloc(8*number_Block * sizeof(uint8_t));
     
     int index = 0;
-    for (auto it : my_map){
-        uint8_t* vars = (uint8_t *) (it.first);
-
+    
+    //multithread solution
+    pthread_t* threads_hash =(pthread_t*)malloc(my_map.size()*sizeof(pthread_t));
+    unordered_map<int, hash_struct*> index_struct_map;
+    int map_index = 0;
+    for (auto it : my_map){       
+        hash_struct* hash_struct_helper = (hash_struct*)malloc(sizeof(hash_struct));
+	hash_struct_helper->block_msg = (const uint8_t*)it.first;
+	hash_struct_helper->length = it.second;	
+	pthread_create(&threads_hash[map_index], NULL, hash_function, hash_struct_helper);
+	index_struct_map[map_index] = hash_struct_helper;
+	map_index=map_index+1;
+	/*
         uint32_t state[5] = {0x67452301, 0xEFCDAB89, 0x98BADCFE, 0x10325476, 0xC3D2E1F0};
         sha1_process_arm(state, (const uint8_t*)it.first, it.second);
 
@@ -146,9 +178,32 @@ void compute_Hash(int id, int compare){
         hash_sum[index]=b7;
         index = index+1;
         hash_sum[index]=b8;
-        index = index+1;
+        index = index+1;*/
 																	 
      }
+     
+     for (int i = 0; i < my_map.size(); i++){
+         pthread_join(threads_hash[i], NULL);
+         
+         hash_sum[index]=index_struct_map[i].hash_result[0];
+         index = index+1;
+         hash_sum[index]=index_struct_map[i].hash_result[1];
+         index=index+1;
+         hash_sum[index]=index_struct_map[i].hash_result[2];
+         index=index+1;
+         hash_sum[index]=index_struct_map[i].hash_result[3];
+         index = index+1;
+         hash_sum[index]=index_struct_map[i].hash_result[4];
+         index = index+1;
+         hash_sum[index]=index_struct_map[i].hash_result[5];
+         index = index+1;
+         hash_sum[index]=index_struct_map[i].hash_result[6];
+         index = index+1;
+         hash_sum[index]=index_struct_map[i].hash_result[7];
+         index = index+1;
+     }
+     
+     
      uint32_t state[5] = {0x67452301, 0xEFCDAB89, 0x98BADCFE, 0x10325476, 0xC3D2E1F0};
      sha1_process_arm(state, hash_sum, 8*my_map.size());
      const uint8_t b1 = (uint8_t)(state[0] >> 24);
@@ -158,11 +213,7 @@ void compute_Hash(int id, int compare){
      const uint8_t b5 = (uint8_t)(state[1] >> 24);
      const uint8_t b6 = (uint8_t)(state[1] >> 16);
      const uint8_t b7 = (uint8_t)(state[1] >>  8);
-     const uint8_t b8 = (uint8_t)(state[1] >>  0);
-
-//     printf("SHA1 hash of empty message: ");
-//     printf("%02X%02X%02X%02X%02X%02X%02X%02X\n",b1, b2, b3, b4, b5, b6, b7, b8);
-     
+     const uint8_t b8 = (uint8_t)(state[1] >>  0);    
      
      hash_result[0] = b1;
      hash_result[1] = b2;
@@ -215,7 +266,7 @@ void compute_Hash(int id, int compare){
        //printf("%02X%02X%02X%02X%02X%02X%02X%02X\n",saved_b1, saved_b2, saved_b3, saved_b4, saved_b5, saved_b6, saved_b7, saved_b8);    
      } 
          
- 
+     free(hash_sum);
 }
 
 
