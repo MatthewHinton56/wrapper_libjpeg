@@ -183,9 +183,11 @@ void compute_Hash(int id, int compare){
             context = (context << 8) | hash_result[hash_index];
         }
         uintptr_t pacptr = my_pac_map[id];
-        uintptr_t aut_result = aut_add(pacptr, context);
-	printf("ptr after aut %" PRIxPTR "\n", (uintptr_t)aut_result);
-	printf("%d\n", *((int*)aut_result));
+        //context = context - 1;
+	uintptr_t aut_result = aut_add(pacptr, context);
+	*((int*)aut_result);
+	//printf("ptr after aut %" PRIxPTR "\n", (uintptr_t)aut_result);
+	//printf("%d\n", *((int*)aut_result));
         
 	 /*bool same = (saved_b1 == hash_result[0])&&(saved_b2 == hash_result[1])&&(saved_b3 == hash_result[2])&&(saved_b4 == hash_result[3])&&(saved_b5 == hash_result[4])&&(saved_b6 == hash_result[5])&&(saved_b7 == hash_result[6])&&(saved_b8 == hash_result[7]);
 	assert(same==1);*/
@@ -206,7 +208,7 @@ void compute_Hash(int id, int compare){
         
         uintptr_t rootptr = my_rootptr_map[id];
         uintptr_t pac_result = pac_add(rootptr, context);
-        printf( "pac_result %" PRIxPTR "\n", (uintptr_t)  pac_result);
+        //printf( "pac_result %" PRIxPTR "\n", (uintptr_t)  pac_result);
         my_pac_map[id] = pac_result;
 
        //printf("SHA1 hash of empty message: ");
