@@ -12,7 +12,7 @@
 struct jpeg_error_mgr *jpeg_std_error_wrapped(struct jpeg_decompress_struct * my_cinfo, int id) { 
     compute_Hash(id, 1);
     struct jpeg_error_mgr* jerr = (struct jpeg_error_mgr*)malloc(sizeof(jpeg_error_mgr));
-    Insert_newBlock_withID(id, (uintptr_t)jerr, (size_t)sizeof(jpeg_error_mgr));
+    Insert_newBlock_withID(id, (uintptr_t)jerr, (size_t)sizeof(jpeg_error_mgr), 0);
     
     
     struct jpeg_error_mgr *err = jpeg_std_error(jerr);

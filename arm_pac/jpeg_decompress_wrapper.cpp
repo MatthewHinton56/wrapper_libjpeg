@@ -14,7 +14,7 @@ Jpeg_decompress::Jpeg_decompress()
 {
     id = Insert_newDoc();
     cinfo = (struct jpeg_decompress_struct *)malloc(sizeof(jpeg_decompress_struct));
-    Insert_newBlock_withID(id, (uintptr_t)cinfo, (size_t)sizeof(jpeg_decompress_struct));
+    Insert_newBlock_withID(id, (uintptr_t)cinfo, (size_t)sizeof(jpeg_decompress_struct), 1);
     compute_Hash(id, 0);
     printf("cinfo %p\n", cinfo);
 }
