@@ -13,7 +13,7 @@
 #include <pthread.h>
 #include <sys/sysinfo.h>
 
-int number_cpu = get_nprocs()-2;
+int number_cpu = 8; // get_nprocs()-2;
 using namespace std;
 int curr_id = 0;
 unordered_map<int, unordered_map<uintptr_t, size_t>> my_Documentation;
@@ -30,6 +30,7 @@ uint8_t saved_b8=0;
 
 typedef struct {
     uint8_t hash_result[8];
+    int thread_id;
     vector<pair<uintptr_t,size_t>>* block_size;
 } hash_struct;
 
@@ -118,11 +119,17 @@ uintptr_t aut_add(uintptr_t my_pointer, uint64_t context){
 }
 
 void* hash_function(void* args){
-    hash_struct *actual_args = args;
+    hash_struct *actual_args = (hash_struct*)args;
+    cpu_set_t cpuset;
+    CPU_ZERO(&cpuset);
+    CPU_SET(actual_args->thread_id, &cpuset);
+    pthread_setaffinity_np(pthread_self(), sizeof(cpu_set_t), &cpuset);
+
+
     vector<pair<uintptr_t,size_t>>* my_block_size = actual_args->block_size;
     
     if(my_block_size->size()==0){
-        return;
+        return NULL;
     }
     if(my_block_size->size()==1){
             uint32_t state[5] = {0x67452301, 0xEFCDAB89, 0x98BADCFE, 0x10325476, 0xC3D2E1F0};
@@ -191,7 +198,8 @@ void compute_Hash(int id, int compare){
        size = size+it.second;
     }
     size = (int)(size/number_cpu)+2;
-    
+    //printf("size %ld\n", size);
+
     //distribute the jobs
     for(int i=0;i<number_cpu; i++){
         vector<pair<uintptr_t,size_t>> curr_blocks;
@@ -201,7 +209,6 @@ void compute_Hash(int id, int compare){
     int current_thread_index = 0;
     for (auto it : my_map){ 
        if(current_size>size){
-           number_thread_used = number_thread_used+1;
            current_thread_index = current_thread_index+1;
            current_size = 0;
        }else{
@@ -209,13 +216,14 @@ void compute_Hash(int id, int compare){
            thread_blocks_map[current_thread_index].push_back(std::make_pair((uintptr_t)it.first, it.second));
        }
     }
-    
+    //printf("number of thread %d\n", current_thread_index+1);
     //do the jobs, in total there should be current_thread_index+1 threads
     for(int i=0; i<(current_thread_index+1); i++){
         hash_struct* hash_struct_helper = (hash_struct*)malloc(sizeof(hash_struct));
 	hash_struct_helper->block_size = &thread_blocks_map[i];	
-	pthread_create(&threads_hash[map_index], NULL, hash_function, hash_struct_helper);
-        index_struct_map[i] = hash_struct_helper; 
+	hash_struct_helper->thread_id = i;
+	pthread_create(&threads_hash[i], NULL, hash_function, hash_struct_helper);
+      	index_struct_map[i] = hash_struct_helper; 
     }
     
     //wait for the jobs
@@ -242,7 +250,7 @@ void compute_Hash(int id, int compare){
     }
           
      uint32_t state[5] = {0x67452301, 0xEFCDAB89, 0x98BADCFE, 0x10325476, 0xC3D2E1F0};
-     sha1_process_arm(state, hash_sum, 8*(current_thread_index+1).size());
+     sha1_process_arm(state, hash_sum, 8*(current_thread_index+1));
      const uint8_t b1 = (uint8_t)(state[0] >> 24);
      const uint8_t b2 = (uint8_t)(state[0] >> 16);
      const uint8_t b3 = (uint8_t)(state[0] >>  8);
@@ -287,7 +295,7 @@ void compute_Hash(int id, int compare){
 }
 
 //non parallel
-void compute_Hash_noparallel(int id, int compare){
+void compute_Hash_no(int id, int compare){
 
     uint8_t hash_result[8];
 
@@ -351,9 +359,11 @@ void compute_Hash_noparallel(int id, int compare){
      
      if(compare==1){
          //printf("SHA1 hash of empty message: ");
-         //printf("%02X%02X%02X%02X%02X%02X%02X%02X\n",hash_result[0], hash_result[1], hash_result[2], hash_result[3], hash_result[4], hash_result[5], hash_result[6], hash_result[7]);  
+         //printf("%02X%02X%02X%02X%02X%02X%02X%02X\n",hash_result[0], hash_result[1], hash_result[2], hash_result[3], hash_result[4
+], hash_result[5], hash_result[6], hash_result[7]);  
          //printf("saved SHA1 hash of empty message: ");
-         //printf("%02X%02X%02X%02X%02X%02X%02X%02X\n",saved_b1, saved_b2, saved_b3, saved_b4, saved_b5, saved_b6, saved_b7, saved_b8);
+         //printf("%02X%02X%02X%02X%02X%02X%02X%02X\n",saved_b1, saved_b2, saved_b3, saved_b4, saved_b5, saved_b6, saved_b7, saved_b
+8);
         uint64_t context;
         for (int hash_index=0; hash_index<8; hash_index++){
             context = (context << 8) | hash_result[hash_index];
@@ -365,7 +375,8 @@ void compute_Hash_noparallel(int id, int compare){
 	//printf("ptr after aut %" PRIxPTR "\n", (uintptr_t)aut_result);
 	//printf("%d\n", *((int*)aut_result));
         
-	 /*bool same = (saved_b1 == hash_result[0])&&(saved_b2 == hash_result[1])&&(saved_b3 == hash_result[2])&&(saved_b4 == hash_result[3])&&(saved_b5 == hash_result[4])&&(saved_b6 == hash_result[5])&&(saved_b7 == hash_result[6])&&(saved_b8 == hash_result[7]);
+	 /*bool same = (saved_b1 == hash_result[0])&&(saved_b2 == hash_result[1])&&(saved_b3 == hash_result[2])&&(saved_b4 == hash_r
+esult[3])&&(saved_b5 == hash_result[4])&&(saved_b6 == hash_result[5])&&(saved_b7 == hash_result[6])&&(saved_b8 == hash_result[7]);
 	assert(same==1);*/
      }else{
         /*saved_b1 = hash_result[0];
@@ -388,20 +399,11 @@ void compute_Hash_noparallel(int id, int compare){
         my_pac_map[id] = pac_result;
 
        //printf("SHA1 hash of empty message: ");
-       //printf("%02X%02X%02X%02X%02X%02X%02X%02X\n",saved_b1, saved_b2, saved_b3, saved_b4, saved_b5, saved_b6, saved_b7, saved_b8);    
+       //printf("%02X%02X%02X%02X%02X%02X%02X%02X\n",saved_b1, saved_b2, saved_b3, saved_b4, saved_b5, saved_b6, saved_b7, saved_b8)
+;    
      } 
          
      free(hash_sum);
 }
-
-
-
-
-
-
-
-
-
-
 
 
