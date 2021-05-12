@@ -6,10 +6,14 @@
 #include <string.h>
 #include <stdbool.h>
 #include <unordered_map>
+#include <vector>
 #include "sha1_arm.h"
 #include <assert.h>
 #include <inttypes.h>
 #include <pthread.h>
+#include <sys/sysinfo.h>
+
+int number_cpu = get_nprocs()-2;
 using namespace std;
 int curr_id = 0;
 unordered_map<int, unordered_map<uintptr_t, size_t>> my_Documentation;
@@ -26,8 +30,7 @@ uint8_t saved_b8=0;
 
 typedef struct {
     uint8_t hash_result[8];
-    (const uint8_t*) block_msg;
-    size_t length;
+    vector<pair<uintptr_t,size_t>>* block_size;
 } hash_struct;
 
 
@@ -114,24 +117,178 @@ uintptr_t aut_add(uintptr_t my_pointer, uint64_t context){
     return result;
 }
 
-void hash_function(void* args){
+void* hash_function(void* args){
     hash_struct *actual_args = args;
-    uint32_t state[5] = {0x67452301, 0xEFCDAB89, 0x98BADCFE, 0x10325476, 0xC3D2E1F0};
-    sha1_process_arm(state, actual_args->block_msg, actual_args->length);
-    actual_args->hash_result[0] = (uint8_t)(state[0] >> 24);
-    actual_args->hash_result[1] = (uint8_t)(state[0] >> 16);
-    actual_args->hash_result[2] = (uint8_t)(state[0] >>  8);
-    actual_args->hash_result[3] = (uint8_t)(state[0] >>  0);
-    actual_args->hash_result[4] = (uint8_t)(state[1] >> 24);
-    actual_args->hash_result[5] = (uint8_t)(state[1] >> 16);
-    actual_args->hash_result[6] = (uint8_t)(state[1] >>  8);
-    actual_args->hash_result[7] = (uint8_t)(state[1] >>  0);
+    vector<pair<uintptr_t,size_t>>* my_block_size = actual_args->block_size;
     
+    if(my_block_size->size()==0){
+        return;
+    }
+    if(my_block_size->size()==1){
+            uint32_t state[5] = {0x67452301, 0xEFCDAB89, 0x98BADCFE, 0x10325476, 0xC3D2E1F0};
+            sha1_process_arm(state, (uint8_t*)my_block_size->at(0).first, my_block_size->at(0).second);
+            actual_args->hash_result[0] = (uint8_t)(state[0] >> 24);
+            actual_args->hash_result[1] = (uint8_t)(state[0] >> 16);
+            actual_args->hash_result[2] = (uint8_t)(state[0] >>  8);
+            actual_args->hash_result[3] = (uint8_t)(state[0] >>  0);
+            actual_args->hash_result[4] = (uint8_t)(state[1] >> 24);
+            actual_args->hash_result[5] = (uint8_t)(state[1] >> 16);
+            actual_args->hash_result[6] = (uint8_t)(state[1] >>  8);
+            actual_args->hash_result[7] = (uint8_t)(state[1] >>  0);      
+    }else{    
+        int index = 0;
+        uint8_t* hash_sum = (uint8_t*)malloc(8*my_block_size->size()*sizeof(uint8_t));
+        for(int i = 0; i<my_block_size->size(); i++){
+            uint32_t state[5] = {0x67452301, 0xEFCDAB89, 0x98BADCFE, 0x10325476, 0xC3D2E1F0};
+            sha1_process_arm(state, (uint8_t*)my_block_size->at(i).first, my_block_size->at(i).second);
+            hash_sum[index]=(uint8_t)(state[0] >> 24);;
+            index = index+1;
+            hash_sum[index]=(uint8_t)(state[0] >> 16);
+            index=index+1;
+            hash_sum[index]=(uint8_t)(state[0] >>  8);
+            index=index+1;
+            hash_sum[index]=(uint8_t)(state[0] >>  0);
+            index = index+1;
+            hash_sum[index]=(uint8_t)(state[1] >> 24);
+            index = index+1;
+            hash_sum[index]=(uint8_t)(state[1] >> 16);
+            index = index+1;
+            hash_sum[index]=(uint8_t)(state[1] >>  8);
+            index = index+1;
+            hash_sum[index]=(uint8_t)(state[1] >>  0);
+            index = index+1;          
+        }
+        uint32_t state[5] = {0x67452301, 0xEFCDAB89, 0x98BADCFE, 0x10325476, 0xC3D2E1F0};
+        sha1_process_arm(state, hash_sum, 8*my_block_size->size());
+	actual_args->hash_result[0] = (uint8_t)(state[0] >> 24);
+        actual_args->hash_result[1] = (uint8_t)(state[0] >> 16);
+        actual_args->hash_result[2] = (uint8_t)(state[0] >>  8);
+        actual_args->hash_result[3] = (uint8_t)(state[0] >>  0);
+        actual_args->hash_result[4] = (uint8_t)(state[1] >> 24);
+        actual_args->hash_result[5] = (uint8_t)(state[1] >> 16);
+        actual_args->hash_result[6] = (uint8_t)(state[1] >>  8);
+        actual_args->hash_result[7] = (uint8_t)(state[1] >>  0);    
+        free(hash_sum);      
+    }    
 }
 
 void compute_Hash(int id, int compare){
 
-    //uint8_t *hash_result = (uint8_t*)malloc(8 * sizeof(uint8_t));
+    uint8_t hash_result[8];
+
+    int number_Block = my_Documentation[id].size();
+    unordered_map<uintptr_t, size_t> my_map = my_Documentation[id];
+    
+    //multithread solution
+    pthread_t* threads_hash =(pthread_t*)malloc(number_cpu*sizeof(pthread_t));
+    //thread to blocks assigned to it
+    unordered_map<int, vector<pair<uintptr_t,size_t>>> thread_blocks_map;
+    unordered_map<int, hash_struct*> index_struct_map;
+    
+    //distribute the job on different threads, first calculate the size
+    size_t size = 0;
+    for (auto it : my_map){ 
+       size = size+it.second;
+    }
+    size = (int)(size/number_cpu)+2;
+    
+    //distribute the jobs
+    for(int i=0;i<number_cpu; i++){
+        vector<pair<uintptr_t,size_t>> curr_blocks;
+        thread_blocks_map[i]=curr_blocks;
+    } 
+    int current_size = 0;
+    int current_thread_index = 0;
+    for (auto it : my_map){ 
+       if(current_size>size){
+           number_thread_used = number_thread_used+1;
+           current_thread_index = current_thread_index+1;
+           current_size = 0;
+       }else{
+           current_size = current_size+it.second;
+           thread_blocks_map[current_thread_index].push_back(std::make_pair((uintptr_t)it.first, it.second));
+       }
+    }
+    
+    //do the jobs, in total there should be current_thread_index+1 threads
+    for(int i=0; i<(current_thread_index+1); i++){
+        hash_struct* hash_struct_helper = (hash_struct*)malloc(sizeof(hash_struct));
+	hash_struct_helper->block_size = &thread_blocks_map[i];	
+	pthread_create(&threads_hash[map_index], NULL, hash_function, hash_struct_helper);
+        index_struct_map[i] = hash_struct_helper; 
+    }
+    
+    //wait for the jobs
+    int index = 0;
+    uint8_t* hash_sum = (uint8_t*)malloc(8*(current_thread_index+1)*sizeof(uint8_t));
+    for(int i=0; i<(current_thread_index+1); i++){
+        pthread_join(threads_hash[i], NULL);
+        hash_sum[index]=index_struct_map[i]->hash_result[0];
+        index = index+1;
+        hash_sum[index]=index_struct_map[i]->hash_result[1];
+        index=index+1;
+        hash_sum[index]=index_struct_map[i]->hash_result[2];
+        index=index+1;
+        hash_sum[index]=index_struct_map[i]->hash_result[3];
+        index = index+1;
+        hash_sum[index]=index_struct_map[i]->hash_result[4];
+        index = index+1;
+        hash_sum[index]=index_struct_map[i]->hash_result[5];
+        index = index+1;
+        hash_sum[index]=index_struct_map[i]->hash_result[6];
+        index = index+1;
+        hash_sum[index]=index_struct_map[i]->hash_result[7];
+        index = index+1;
+    }
+          
+     uint32_t state[5] = {0x67452301, 0xEFCDAB89, 0x98BADCFE, 0x10325476, 0xC3D2E1F0};
+     sha1_process_arm(state, hash_sum, 8*(current_thread_index+1).size());
+     const uint8_t b1 = (uint8_t)(state[0] >> 24);
+     const uint8_t b2 = (uint8_t)(state[0] >> 16);
+     const uint8_t b3 = (uint8_t)(state[0] >>  8);
+     const uint8_t b4 = (uint8_t)(state[0] >>  0);
+     const uint8_t b5 = (uint8_t)(state[1] >> 24);
+     const uint8_t b6 = (uint8_t)(state[1] >> 16);
+     const uint8_t b7 = (uint8_t)(state[1] >>  8);
+     const uint8_t b8 = (uint8_t)(state[1] >>  0);    
+     hash_result[0] = b1;
+     hash_result[1] = b2;
+     hash_result[2] = b3;
+     hash_result[3] = b4;
+     hash_result[4] = b5;
+     hash_result[5] = b6; 
+     hash_result[6] = b7;
+     hash_result[7] = b8;
+     
+     if(compare==1){
+         uint64_t context;
+         for (int hash_index=0; hash_index<8; hash_index++){
+            context = (context << 8) | hash_result[hash_index];
+         }
+         uintptr_t pacptr = my_pac_map[id];
+	 uintptr_t aut_result = aut_add(pacptr, context);
+	 *((int*)aut_result);
+	
+     }else{     
+         uint64_t context;
+         for (int hash_index=0; hash_index<8; hash_index++){
+            context = (context << 8) | hash_result[hash_index];
+         }        
+         uintptr_t rootptr = my_rootptr_map[id];
+         uintptr_t pac_result = pac_add(rootptr, context);
+         my_pac_map[id] = pac_result; 
+     } 
+     
+     for(int i=0; i<(current_thread_index+1); i++){
+         free(index_struct_map[i]);
+     }
+     free(threads_hash);
+     free(hash_sum);
+}
+
+//non parallel
+void compute_Hash_noparallel(int id, int compare){
+
     uint8_t hash_result[8];
 
     int number_Block = my_Documentation[id].size();
@@ -140,18 +297,8 @@ void compute_Hash(int id, int compare){
     
     int index = 0;
     
-    //multithread solution
-    pthread_t* threads_hash =(pthread_t*)malloc(my_map.size()*sizeof(pthread_t));
-    unordered_map<int, hash_struct*> index_struct_map;
-    int map_index = 0;
     for (auto it : my_map){       
-        hash_struct* hash_struct_helper = (hash_struct*)malloc(sizeof(hash_struct));
-	hash_struct_helper->block_msg = (const uint8_t*)it.first;
-	hash_struct_helper->length = it.second;	
-	pthread_create(&threads_hash[map_index], NULL, hash_function, hash_struct_helper);
-	index_struct_map[map_index] = hash_struct_helper;
-	map_index=map_index+1;
-	/*
+        
         uint32_t state[5] = {0x67452301, 0xEFCDAB89, 0x98BADCFE, 0x10325476, 0xC3D2E1F0};
         sha1_process_arm(state, (const uint8_t*)it.first, it.second);
 
@@ -178,31 +325,9 @@ void compute_Hash(int id, int compare){
         hash_sum[index]=b7;
         index = index+1;
         hash_sum[index]=b8;
-        index = index+1;*/
-																	 
+        index = index+1;
+        											 
      }
-     
-     for (int i = 0; i < my_map.size(); i++){
-         pthread_join(threads_hash[i], NULL);
-         
-         hash_sum[index]=index_struct_map[i].hash_result[0];
-         index = index+1;
-         hash_sum[index]=index_struct_map[i].hash_result[1];
-         index=index+1;
-         hash_sum[index]=index_struct_map[i].hash_result[2];
-         index=index+1;
-         hash_sum[index]=index_struct_map[i].hash_result[3];
-         index = index+1;
-         hash_sum[index]=index_struct_map[i].hash_result[4];
-         index = index+1;
-         hash_sum[index]=index_struct_map[i].hash_result[5];
-         index = index+1;
-         hash_sum[index]=index_struct_map[i].hash_result[6];
-         index = index+1;
-         hash_sum[index]=index_struct_map[i].hash_result[7];
-         index = index+1;
-     }
-     
      
      uint32_t state[5] = {0x67452301, 0xEFCDAB89, 0x98BADCFE, 0x10325476, 0xC3D2E1F0};
      sha1_process_arm(state, hash_sum, 8*my_map.size());
@@ -268,6 +393,11 @@ void compute_Hash(int id, int compare){
          
      free(hash_sum);
 }
+
+
+
+
+
 
 
 
