@@ -14,7 +14,7 @@ int main(int argc, char **argv) {
   struct timespec start, end;
   clock_gettime(CLOCK_MONOTONIC_RAW, &start);
   
-  for(size_t i = 0; i < 10; i++)
+  for(size_t i = 0; i < 10; i++){
 
     unsigned long bmp_size;
     unsigned char *bmp_buffer;

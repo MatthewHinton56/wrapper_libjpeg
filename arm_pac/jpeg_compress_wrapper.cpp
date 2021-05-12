@@ -6,11 +6,10 @@
 #include <string.h>
 #include <assert.h>
 #include "jpeg_compress_wrapper.h"
-#include "Documentor.h"
 #include "jerror.h"
 #include "jpegint.h"
 
-Jpeg_decompress::Jpeg_compress()
+Jpeg_compress::Jpeg_compress()
 {
     id = Insert_newDoc();
     cinfo = (struct jpeg_compress_struct *)malloc(sizeof(jpeg_compress_struct));
@@ -19,49 +18,49 @@ Jpeg_decompress::Jpeg_compress()
     printf("cinfo %p\n", cinfo);
 }
 
-Jpeg_decompress::~Jpeg_compress()
+Jpeg_compress::~Jpeg_compress()
 {
     Delete_Doc(id);
 }
 
-void jpeg_CreateCompress_wrapped(int version, size_t structsize) {
+void Jpeg_compress::jpeg_CreateCompress_wrapped(int version, size_t structsize) {
 
 		
 	jpeg_CreateCompress(cinfo, version, structsize);
 	
 }
 
-void jpeg_stdio_dest_wrapped(FILE * outfile) {
+void Jpeg_compress::jpeg_stdio_dest_wrapped(FILE * outfile) {
 	
 	jpeg_stdio_dest(cinfo, outfile);
 	
 }
 
-void jpeg_set_defaults_wrapped() {
+void Jpeg_compress::jpeg_set_defaults_wrapped() {
 
 	jpeg_set_defaults(cinfo);
 	
 }
 
-void jpeg_start_compress_wrapped( boolean write_all_tables) {
+void Jpeg_compress::jpeg_start_compress_wrapped( boolean write_all_tables) {
 
 	jpeg_start_compress(cinfo, write_all_tables);
 	
 }
 
-JDIMENSION jpeg_write_scanlines_wrapped(JSAMPARRAY scanlines_client, JSAMPARRAY scanlines_library, JDIMENSION num_lines) {
+JDIMENSION Jpeg_compress::jpeg_write_scanlines_wrapped(JSAMPARRAY scanlines, JDIMENSION num_lines) {
 	
-	JDIMENSION ret = jpeg_write_scanlines(cinfo, scanlines_library, num_lines);
+	JDIMENSION ret = jpeg_write_scanlines(cinfo, scanlines, num_lines);
 	
 	return ret;
 }
 
-void jpeg_finish_compress_wrapped() {
+void Jpeg_compress::jpeg_finish_compress_wrapped() {
 	jpeg_finish_compress(cinfo);
 	
 }
 
-void jpeg_destroy_compress_wrapped() {
+void Jpeg_compress::jpeg_destroy_compress_wrapped() {
 	jpeg_destroy_compress(cinfo);
 	
 }

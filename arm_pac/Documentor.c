@@ -359,11 +359,9 @@ void compute_Hash_no(int id, int compare){
      
      if(compare==1){
          //printf("SHA1 hash of empty message: ");
-         //printf("%02X%02X%02X%02X%02X%02X%02X%02X\n",hash_result[0], hash_result[1], hash_result[2], hash_result[3], hash_result[4
-], hash_result[5], hash_result[6], hash_result[7]);  
+         //printf("%02X%02X%02X%02X%02X%02X%02X%02X\n",hash_result[0], hash_result[1], hash_result[2], hash_result[3], hash_result[4], hash_result[5], hash_result[6], hash_result[7]);  
          //printf("saved SHA1 hash of empty message: ");
-         //printf("%02X%02X%02X%02X%02X%02X%02X%02X\n",saved_b1, saved_b2, saved_b3, saved_b4, saved_b5, saved_b6, saved_b7, saved_b
-8);
+         //printf("%02X%02X%02X%02X%02X%02X%02X%02X\n",saved_b1, saved_b2, saved_b3, saved_b4, saved_b5, saved_b6, saved_b7, saved_b8);
         uint64_t context;
         for (int hash_index=0; hash_index<8; hash_index++){
             context = (context << 8) | hash_result[hash_index];

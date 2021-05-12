@@ -1,6 +1,6 @@
 #include "jpeglib.h"
 #include <cstdint>
- 
+#include "Documentor.h" 
 class Jpeg_compress
 {
 private:
@@ -17,7 +17,7 @@ public:
     void jpeg_stdio_dest_wrapped(FILE * outfile);
     void jpeg_set_defaults_wrapped();
     void jpeg_start_compress_wrapped(boolean write_all_tables);
-    JDIMENSION jpeg_write_scanlines_wrapped(JSAMPARRAY scanlines_client, JSAMPARRAY scanlines_library, JDIMENSION num_lines);
+    JDIMENSION jpeg_write_scanlines_wrapped( JSAMPARRAY scanlines, JDIMENSION num_lines);
     void jpeg_finish_compress_wrapped();
     void jpeg_destroy_compress_wrapped();
 };
