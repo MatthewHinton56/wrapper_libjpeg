@@ -5,20 +5,27 @@
 #include <sys/stat.h>
 #include <fcntl.h>
 #include <unistd.h>
+#include <time.h>
 #include "jpeg_error_mgr_wrapper.h"
 #include "jpeg_decompress_wrapper.h"
 
 int main(int argc, char **argv) {
+
+  struct timespec start, end;
+  clock_gettime(CLOCK_MONOTONIC_RAW, &start);
+  
+  for(size_t i = 0; i < 10; i++)
+
     unsigned long bmp_size;
     unsigned char *bmp_buffer;
     int row_stride, width, height, pixel_size;
-    printf("hello world\n");
+
     Jpeg_decompress cinfo;
     
     FILE *input_file = fopen(argv[1], "rb");
-    printf("hello world\n");
+
     jpeg_std_error_wrapped(cinfo.get_cinfo(),cinfo.get_id());
-    printf("hello world\n");
+
     cinfo.jpeg_create_decompress_wrapped();
     
     cinfo.jpeg_stdio_src_wrapped(input_file);
@@ -58,4 +65,8 @@ int main(int argc, char **argv) {
 
 	close(fd);
 	free(bmp_buffer);
+  }
+  clock_gettime(CLOCK_MONOTONIC_RAW, &end);
+  uint64_t delta_us = (end.tv_sec - start.tv_sec) * 1000000 + (end.tv_nsec - start.tv_nsec) / 1000;
+  printf("pac_sha Decompress: %s: Execution time = %ld ms\n", argv[1], delta_us / 1000 / 10);
 }
