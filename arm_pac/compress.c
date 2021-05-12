@@ -58,7 +58,7 @@ int test(int argc, char **argv) {
     /* like reading a file, this time write one row at a time */
     while( cinfo.get_cinfo()->next_scanline < cinfo.get_cinfo()->image_height )
     {
-        row_pointer[0] = (JSAMPROW)(raw_image + cinfo.get_cinfo()->next_scanline * cinfo.get_cinfo()->image_width *  cinfo.get_cinfo()->input_components);
+        row_pointer[0] = (JSAMPROW)&raw_image[ cinfo.get_cinfo()->next_scanline * cinfo.get_cinfo()->image_width *  cinfo.get_cinfo()->input_components];
         cinfo.jpeg_write_scanlines_wrapped(row_pointer,  1 );
     }
     /* similar to read file, clean up after we're done compressing */
