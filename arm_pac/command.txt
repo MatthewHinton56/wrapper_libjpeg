@@ -1,0 +1,48 @@
+
+#Instruction by Yingchen
+
+First, make with libjpeg with additional files.
+gcc -c wrapped_malloc.c
+g++ -march=armv8.3-a+crc+crypto -o simple jpeg_decompress_wrapper.cpp jpeg_error_mgr_wrapper.cpp  -Wl,--wrap,wmalloc -Wl,--wrap,wfree simple.c wrapped_malloc.o libturbojpeg.a Documentor.c sha1_arm.c -ggdb
+
+To build qemu:
+Install qemu version 6.0.5
+
+Prepare disks:
+dd if=/dev/zero of=flash1.img bs=1M count=64
+dd if=/dev/zero of=flash0.img bs=1M count=64
+dd if=/usr/share/qemu-efi-aarch64/QEMU_EFI.fd of=flash0.img conv=notrunc
+
+qemu-img create -f qcow2 ubuntu.img 20G
+
+#have to be version 18! 20 and 21 don't work
+Download ubuntu-18.04.5-server-arm64.iso
+
+#Install disk
+qemu-system-aarch64   -cpu max   -device rtl8139,netdev=net0   -device virtio-scsi-device   -device scsi-cd,drive=cdrom   -device virtio-blk-device,drive=hd0   -drive "file=ubuntu-18.04.5-server-arm64.iso,id=cdrom,if=none,media=cdrom"   -drive "if=none,file=ubuntu.img,id=hd0"   -m 2048   -machine virt   -netdev user,id=net0   -nographic   -pflash flash0.img   -pflash flash1.img   -smp 2
+
+#After installation
+qemu-system-aarch64   -cpu max   -device rtl8139,netdev=net0   -device virtio-scsi-device   -device scsi-cd,drive=cdrom   -device virtio-blk-device,drive=hd0     -drive "if=none,file=ubuntu.img,id=hd0"   -m 2048   -machine virt   -netdev user,id=net0   -nographic   -pflash flash0.img   -pflash flash1.img   -smp 2
+
+However, the kernel version of the given ubuntu iso is 4. something. Pauth is only support in kernel verison 5.0+, if we cat /proc/cpuinfo we will not see pac support, and out pac instructions will compile but will not be executed. So we need to self compile a kernel
+
+#Kernel compilation, find an arm machine, I use amazon ec2
+wget https://cdn.kernel.org/pub/linux/kernel/v5.x/linux-5.9.6.tar.xz
+tar xvf linux-5.9.6.tar.xz
+cd linux-5.9.6
+cp -v /boot/config-$(uname -r) .config
+make menuconfig
+#inside menuconfig, make sure 4 symbols are set: 1. CONFIG_ARM64_PTR_AUTH=y for pointer authentication, 2. CONFIG_VIRTIO_BLK=y, CONFIG_VIRTIO_PCI=y to enable linus to read byte from disks, 3. CONFIG_EXT4_FS=y to configure the kernel to read the ext4 filesystem.
+#compile the kernel
+make
+
+#cp the image in the folder /arch/arm64/boot/ out
+
+#append the kernel to the qemu. We need to append the kernel to the correct partiion, which can be checked by df -h: the partition mounted by root(/), in my case, it is /dev/vda2.
+
+#Launch the qemu with additional kernel:  
+qemu-system-aarch64   -cpu max   -device rtl8139,netdev=net0   -device virtio-scsi-device   -device virtio-blk-device,drive=hd0     -drive "if=none,file=ubuntu.img,id=hd0"   -m 2048   -machine virt   -netdev user,id=net0   -nographic   -pflash flash0.img   -pflash flash1.img   -smp 2 -kernel Image -append root="/dev/vda2 console=ttyS0"
+
+#This works, except it complains cannot mount /boot/efi, and falls into emergency mode. No network connection, but able to compile and execute. If launch with command: qemu-system-aarch64   -cpu max   -device rtl8139,netdev=net0   -device virtio-scsi-device   -device virtio-blk-device,drive=hd0     -drive "if=none,file=ubuntu.img,id=hd0"   -m 2048   -machine virt   -netdev user,id=net0   -nographic   -pflash flash0.img   -pflash flash1.img   -smp 2
+Everything will be fine and there is network connection. 
+

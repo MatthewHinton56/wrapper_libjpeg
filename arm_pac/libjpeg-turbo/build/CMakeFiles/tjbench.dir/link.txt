@@ -1,0 +1,1 @@
+/usr/bin/cc -O3 -DNDEBUG  -rdynamic CMakeFiles/tjbench.dir/tjbench.c.o CMakeFiles/tjbench.dir/tjutil.c.o  -o tjbench -Wl,-rpath,/home/yingchen/wrapper_libjpeg/arm_pac/libjpeg-turbo/build: libturbojpeg.so.0.2.0 -lm 

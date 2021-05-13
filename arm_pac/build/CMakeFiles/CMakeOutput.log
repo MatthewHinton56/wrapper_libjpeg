@@ -1,0 +1,472 @@
+The system is: Linux - 4.15.0-142-generic - aarch64
+Compiling the C compiler identification source file "CMakeCCompilerId.c" succeeded.
+Compiler: /usr/bin/cc 
+Build flags: 
+Id flags:  
+
+The output was:
+0
+
+
+Compilation of the C compiler identification source "CMakeCCompilerId.c" produced "a.out"
+
+The C compiler identification is GNU, found in "/home/yingchen/wrapper_libjpeg/arm_pac/libjpeg-turbo/build/CMakeFiles/3.10.2/CompilerIdC/a.out"
+
+Determining if the C compiler works passed with the following output:
+Change Dir: /home/yingchen/wrapper_libjpeg/arm_pac/libjpeg-turbo/build/CMakeFiles/CMakeTmp
+
+Run Build Command:"/usr/bin/make" "cmTC_315bf/fast"
+/usr/bin/make -f CMakeFiles/cmTC_315bf.dir/build.make CMakeFiles/cmTC_315bf.dir/build
+make[1]: Entering directory '/home/yingchen/wrapper_libjpeg/arm_pac/libjpeg-turbo/build/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_315bf.dir/testCCompiler.c.o
+/usr/bin/cc    -o CMakeFiles/cmTC_315bf.dir/testCCompiler.c.o   -c /home/yingchen/wrapper_libjpeg/arm_pac/libjpeg-turbo/build/CMakeFiles/CMakeTmp/testCCompiler.c
+Linking C executable cmTC_315bf
+/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_315bf.dir/link.txt --verbose=1
+/usr/bin/cc      -rdynamic CMakeFiles/cmTC_315bf.dir/testCCompiler.c.o  -o cmTC_315bf 
+make[1]: Leaving directory '/home/yingchen/wrapper_libjpeg/arm_pac/libjpeg-turbo/build/CMakeFiles/CMakeTmp'
+
+
+Detecting C compiler ABI info compiled with the following output:
+Change Dir: /home/yingchen/wrapper_libjpeg/arm_pac/libjpeg-turbo/build/CMakeFiles/CMakeTmp
+
+Run Build Command:"/usr/bin/make" "cmTC_89f73/fast"
+/usr/bin/make -f CMakeFiles/cmTC_89f73.dir/build.make CMakeFiles/cmTC_89f73.dir/build
+make[1]: Entering directory '/home/yingchen/wrapper_libjpeg/arm_pac/libjpeg-turbo/build/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_89f73.dir/CMakeCCompilerABI.c.o
+/usr/bin/cc    -o CMakeFiles/cmTC_89f73.dir/CMakeCCompilerABI.c.o   -c /usr/share/cmake-3.10/Modules/CMakeCCompilerABI.c
+Linking C executable cmTC_89f73
+/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_89f73.dir/link.txt --verbose=1
+/usr/bin/cc     -v -rdynamic CMakeFiles/cmTC_89f73.dir/CMakeCCompilerABI.c.o  -o cmTC_89f73 
+Using built-in specs.
+COLLECT_GCC=/usr/bin/cc
+COLLECT_LTO_WRAPPER=/usr/lib/gcc/aarch64-linux-gnu/7/lto-wrapper
+Target: aarch64-linux-gnu
+Configured with: ../src/configure -v --with-pkgversion='Ubuntu/Linaro 7.5.0-3ubuntu1~18.04' --with-bugurl=file:///usr/share/doc/gcc-7/README.Bugs --enable-languages=c,ada,c++,go,d,fortran,objc,obj-c++ --prefix=/usr --with-gcc-major-version-only --program-suffix=-7 --program-prefix=aarch64-linux-gnu- --enable-shared --enable-linker-build-id --libexecdir=/usr/lib --without-included-gettext --enable-threads=posix --libdir=/usr/lib --enable-nls --enable-bootstrap --enable-clocale=gnu --enable-libstdcxx-debug --enable-libstdcxx-time=yes --with-default-libstdcxx-abi=new --enable-gnu-unique-object --disable-libquadmath --disable-libquadmath-support --enable-plugin --enable-default-pie --with-system-zlib --enable-multiarch --enable-fix-cortex-a53-843419 --disable-werror --enable-checking=release --build=aarch64-linux-gnu --host=aarch64-linux-gnu --target=aarch64-linux-gnu
+Thread model: posix
+gcc version 7.5.0 (Ubuntu/Linaro 7.5.0-3ubuntu1~18.04) 
+COMPILER_PATH=/usr/lib/gcc/aarch64-linux-gnu/7/:/usr/lib/gcc/aarch64-linux-gnu/7/:/usr/lib/gcc/aarch64-linux-gnu/:/usr/lib/gcc/aarch64-linux-gnu/7/:/usr/lib/gcc/aarch64-linux-gnu/
+LIBRARY_PATH=/usr/lib/gcc/aarch64-linux-gnu/7/:/usr/lib/gcc/aarch64-linux-gnu/7/../../../aarch64-linux-gnu/:/usr/lib/gcc/aarch64-linux-gnu/7/../../../../lib/:/lib/aarch64-linux-gnu/:/lib/../lib/:/usr/lib/aarch64-linux-gnu/:/usr/lib/../lib/:/usr/lib/gcc/aarch64-linux-gnu/7/../../../:/lib/:/usr/lib/
+COLLECT_GCC_OPTIONS='-v' '-rdynamic' '-o' 'cmTC_89f73' '-mlittle-endian' '-mabi=lp64'
+ /usr/lib/gcc/aarch64-linux-gnu/7/collect2 -plugin /usr/lib/gcc/aarch64-linux-gnu/7/liblto_plugin.so -plugin-opt=/usr/lib/gcc/aarch64-linux-gnu/7/lto-wrapper -plugin-opt=-fresolution=/tmp/cciX0wAe.res -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lgcc_s -plugin-opt=-pass-through=-lc -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lgcc_s --build-id --eh-frame-hdr --hash-style=gnu --as-needed -export-dynamic -dynamic-linker /lib/ld-linux-aarch64.so.1 -X -EL -maarch64linux --fix-cortex-a53-843419 -pie -z now -z relro -o cmTC_89f73 /usr/lib/gcc/aarch64-linux-gnu/7/../../../aarch64-linux-gnu/Scrt1.o /usr/lib/gcc/aarch64-linux-gnu/7/../../../aarch64-linux-gnu/crti.o /usr/lib/gcc/aarch64-linux-gnu/7/crtbeginS.o -L/usr/lib/gcc/aarch64-linux-gnu/7 -L/usr/lib/gcc/aarch64-linux-gnu/7/../../../aarch64-linux-gnu -L/usr/lib/gcc/aarch64-linux-gnu/7/../../../../lib -L/lib/aarch64-linux-gnu -L/lib/../lib -L/usr/lib/aarch64-linux-gnu -L/usr/lib/../lib -L/usr/lib/gcc/aarch64-linux-gnu/7/../../.. CMakeFiles/cmTC_89f73.dir/CMakeCCompilerABI.c.o -lgcc --push-state --as-needed -lgcc_s --pop-state -lc -lgcc --push-state --as-needed -lgcc_s --pop-state /usr/lib/gcc/aarch64-linux-gnu/7/crtendS.o /usr/lib/gcc/aarch64-linux-gnu/7/../../../aarch64-linux-gnu/crtn.o
+COLLECT_GCC_OPTIONS='-v' '-rdynamic' '-o' 'cmTC_89f73' '-mlittle-endian' '-mabi=lp64'
+make[1]: Leaving directory '/home/yingchen/wrapper_libjpeg/arm_pac/libjpeg-turbo/build/CMakeFiles/CMakeTmp'
+
+
+Parsed C implicit link information from above output:
+  link line regex: [^( *|.*[/\])(ld|CMAKE_LINK_STARTFILE-NOTFOUND|([^/\]+-)?ld|collect2)[^/\]*( |$)]
+  ignore line: [Change Dir: /home/yingchen/wrapper_libjpeg/arm_pac/libjpeg-turbo/build/CMakeFiles/CMakeTmp]
+  ignore line: []
+  ignore line: [Run Build Command:"/usr/bin/make" "cmTC_89f73/fast"]
+  ignore line: [/usr/bin/make -f CMakeFiles/cmTC_89f73.dir/build.make CMakeFiles/cmTC_89f73.dir/build]
+  ignore line: [make[1]: Entering directory '/home/yingchen/wrapper_libjpeg/arm_pac/libjpeg-turbo/build/CMakeFiles/CMakeTmp']
+  ignore line: [Building C object CMakeFiles/cmTC_89f73.dir/CMakeCCompilerABI.c.o]
+  ignore line: [/usr/bin/cc    -o CMakeFiles/cmTC_89f73.dir/CMakeCCompilerABI.c.o   -c /usr/share/cmake-3.10/Modules/CMakeCCompilerABI.c]
+  ignore line: [Linking C executable cmTC_89f73]
+  ignore line: [/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_89f73.dir/link.txt --verbose=1]
+  ignore line: [/usr/bin/cc     -v -rdynamic CMakeFiles/cmTC_89f73.dir/CMakeCCompilerABI.c.o  -o cmTC_89f73 ]
+  ignore line: [Using built-in specs.]
+  ignore line: [COLLECT_GCC=/usr/bin/cc]
+  ignore line: [COLLECT_LTO_WRAPPER=/usr/lib/gcc/aarch64-linux-gnu/7/lto-wrapper]
+  ignore line: [Target: aarch64-linux-gnu]
+  ignore line: [Configured with: ../src/configure -v --with-pkgversion='Ubuntu/Linaro 7.5.0-3ubuntu1~18.04' --with-bugurl=file:///usr/share/doc/gcc-7/README.Bugs --enable-languages=c,ada,c++,go,d,fortran,objc,obj-c++ --prefix=/usr --with-gcc-major-version-only --program-suffix=-7 --program-prefix=aarch64-linux-gnu- --enable-shared --enable-linker-build-id --libexecdir=/usr/lib --without-included-gettext --enable-threads=posix --libdir=/usr/lib --enable-nls --enable-bootstrap --enable-clocale=gnu --enable-libstdcxx-debug --enable-libstdcxx-time=yes --with-default-libstdcxx-abi=new --enable-gnu-unique-object --disable-libquadmath --disable-libquadmath-support --enable-plugin --enable-default-pie --with-system-zlib --enable-multiarch --enable-fix-cortex-a53-843419 --disable-werror --enable-checking=release --build=aarch64-linux-gnu --host=aarch64-linux-gnu --target=aarch64-linux-gnu]
+  ignore line: [Thread model: posix]
+  ignore line: [gcc version 7.5.0 (Ubuntu/Linaro 7.5.0-3ubuntu1~18.04) ]
+  ignore line: [COMPILER_PATH=/usr/lib/gcc/aarch64-linux-gnu/7/:/usr/lib/gcc/aarch64-linux-gnu/7/:/usr/lib/gcc/aarch64-linux-gnu/:/usr/lib/gcc/aarch64-linux-gnu/7/:/usr/lib/gcc/aarch64-linux-gnu/]
+  ignore line: [LIBRARY_PATH=/usr/lib/gcc/aarch64-linux-gnu/7/:/usr/lib/gcc/aarch64-linux-gnu/7/../../../aarch64-linux-gnu/:/usr/lib/gcc/aarch64-linux-gnu/7/../../../../lib/:/lib/aarch64-linux-gnu/:/lib/../lib/:/usr/lib/aarch64-linux-gnu/:/usr/lib/../lib/:/usr/lib/gcc/aarch64-linux-gnu/7/../../../:/lib/:/usr/lib/]
+  ignore line: [COLLECT_GCC_OPTIONS='-v' '-rdynamic' '-o' 'cmTC_89f73' '-mlittle-endian' '-mabi=lp64']
+  link line: [ /usr/lib/gcc/aarch64-linux-gnu/7/collect2 -plugin /usr/lib/gcc/aarch64-linux-gnu/7/liblto_plugin.so -plugin-opt=/usr/lib/gcc/aarch64-linux-gnu/7/lto-wrapper -plugin-opt=-fresolution=/tmp/cciX0wAe.res -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lgcc_s -plugin-opt=-pass-through=-lc -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lgcc_s --build-id --eh-frame-hdr --hash-style=gnu --as-needed -export-dynamic -dynamic-linker /lib/ld-linux-aarch64.so.1 -X -EL -maarch64linux --fix-cortex-a53-843419 -pie -z now -z relro -o cmTC_89f73 /usr/lib/gcc/aarch64-linux-gnu/7/../../../aarch64-linux-gnu/Scrt1.o /usr/lib/gcc/aarch64-linux-gnu/7/../../../aarch64-linux-gnu/crti.o /usr/lib/gcc/aarch64-linux-gnu/7/crtbeginS.o -L/usr/lib/gcc/aarch64-linux-gnu/7 -L/usr/lib/gcc/aarch64-linux-gnu/7/../../../aarch64-linux-gnu -L/usr/lib/gcc/aarch64-linux-gnu/7/../../../../lib -L/lib/aarch64-linux-gnu -L/lib/../lib -L/usr/lib/aarch64-linux-gnu -L/usr/lib/../lib -L/usr/lib/gcc/aarch64-linux-gnu/7/../../.. CMakeFiles/cmTC_89f73.dir/CMakeCCompilerABI.c.o -lgcc --push-state --as-needed -lgcc_s --pop-state -lc -lgcc --push-state --as-needed -lgcc_s --pop-state /usr/lib/gcc/aarch64-linux-gnu/7/crtendS.o /usr/lib/gcc/aarch64-linux-gnu/7/../../../aarch64-linux-gnu/crtn.o]
+    arg [/usr/lib/gcc/aarch64-linux-gnu/7/collect2] ==> ignore
+    arg [-plugin] ==> ignore
+    arg [/usr/lib/gcc/aarch64-linux-gnu/7/liblto_plugin.so] ==> ignore
+    arg [-plugin-opt=/usr/lib/gcc/aarch64-linux-gnu/7/lto-wrapper] ==> ignore
+    arg [-plugin-opt=-fresolution=/tmp/cciX0wAe.res] ==> ignore
+    arg [-plugin-opt=-pass-through=-lgcc] ==> ignore
+    arg [-plugin-opt=-pass-through=-lgcc_s] ==> ignore
+    arg [-plugin-opt=-pass-through=-lc] ==> ignore
+    arg [-plugin-opt=-pass-through=-lgcc] ==> ignore
+    arg [-plugin-opt=-pass-through=-lgcc_s] ==> ignore
+    arg [--build-id] ==> ignore
+    arg [--eh-frame-hdr] ==> ignore
+    arg [--hash-style=gnu] ==> ignore
+    arg [--as-needed] ==> ignore
+    arg [-export-dynamic] ==> ignore
+    arg [-dynamic-linker] ==> ignore
+    arg [/lib/ld-linux-aarch64.so.1] ==> ignore
+    arg [-X] ==> ignore
+    arg [-EL] ==> ignore
+    arg [-maarch64linux] ==> ignore
+    arg [--fix-cortex-a53-843419] ==> ignore
+    arg [-pie] ==> ignore
+    arg [-znow] ==> ignore
+    arg [-zrelro] ==> ignore
+    arg [-o] ==> ignore
+    arg [cmTC_89f73] ==> ignore
+    arg [/usr/lib/gcc/aarch64-linux-gnu/7/../../../aarch64-linux-gnu/Scrt1.o] ==> ignore
+    arg [/usr/lib/gcc/aarch64-linux-gnu/7/../../../aarch64-linux-gnu/crti.o] ==> ignore
+    arg [/usr/lib/gcc/aarch64-linux-gnu/7/crtbeginS.o] ==> ignore
+    arg [-L/usr/lib/gcc/aarch64-linux-gnu/7] ==> dir [/usr/lib/gcc/aarch64-linux-gnu/7]
+    arg [-L/usr/lib/gcc/aarch64-linux-gnu/7/../../../aarch64-linux-gnu] ==> dir [/usr/lib/gcc/aarch64-linux-gnu/7/../../../aarch64-linux-gnu]
+    arg [-L/usr/lib/gcc/aarch64-linux-gnu/7/../../../../lib] ==> dir [/usr/lib/gcc/aarch64-linux-gnu/7/../../../../lib]
+    arg [-L/lib/aarch64-linux-gnu] ==> dir [/lib/aarch64-linux-gnu]
+    arg [-L/lib/../lib] ==> dir [/lib/../lib]
+    arg [-L/usr/lib/aarch64-linux-gnu] ==> dir [/usr/lib/aarch64-linux-gnu]
+    arg [-L/usr/lib/../lib] ==> dir [/usr/lib/../lib]
+    arg [-L/usr/lib/gcc/aarch64-linux-gnu/7/../../..] ==> dir [/usr/lib/gcc/aarch64-linux-gnu/7/../../..]
+    arg [CMakeFiles/cmTC_89f73.dir/CMakeCCompilerABI.c.o] ==> ignore
+    arg [-lgcc] ==> lib [gcc]
+    arg [--push-state] ==> ignore
+    arg [--as-needed] ==> ignore
+    arg [-lgcc_s] ==> lib [gcc_s]
+    arg [--pop-state] ==> ignore
+    arg [-lc] ==> lib [c]
+    arg [-lgcc] ==> lib [gcc]
+    arg [--push-state] ==> ignore
+    arg [--as-needed] ==> ignore
+    arg [-lgcc_s] ==> lib [gcc_s]
+    arg [--pop-state] ==> ignore
+    arg [/usr/lib/gcc/aarch64-linux-gnu/7/crtendS.o] ==> ignore
+    arg [/usr/lib/gcc/aarch64-linux-gnu/7/../../../aarch64-linux-gnu/crtn.o] ==> ignore
+  collapse library dir [/usr/lib/gcc/aarch64-linux-gnu/7] ==> [/usr/lib/gcc/aarch64-linux-gnu/7]
+  collapse library dir [/usr/lib/gcc/aarch64-linux-gnu/7/../../../aarch64-linux-gnu] ==> [/usr/lib/aarch64-linux-gnu]
+  collapse library dir [/usr/lib/gcc/aarch64-linux-gnu/7/../../../../lib] ==> [/usr/lib]
+  collapse library dir [/lib/aarch64-linux-gnu] ==> [/lib/aarch64-linux-gnu]
+  collapse library dir [/lib/../lib] ==> [/lib]
+  collapse library dir [/usr/lib/aarch64-linux-gnu] ==> [/usr/lib/aarch64-linux-gnu]
+  collapse library dir [/usr/lib/../lib] ==> [/usr/lib]
+  collapse library dir [/usr/lib/gcc/aarch64-linux-gnu/7/../../..] ==> [/usr/lib]
+  implicit libs: [gcc;gcc_s;c;gcc;gcc_s]
+  implicit dirs: [/usr/lib/gcc/aarch64-linux-gnu/7;/usr/lib/aarch64-linux-gnu;/usr/lib;/lib/aarch64-linux-gnu;/lib]
+  implicit fwks: []
+
+
+
+
+Detecting C [-std=c11] compiler features compiled with the following output:
+Change Dir: /home/yingchen/wrapper_libjpeg/arm_pac/libjpeg-turbo/build/CMakeFiles/CMakeTmp
+
+Run Build Command:"/usr/bin/make" "cmTC_74d3e/fast"
+/usr/bin/make -f CMakeFiles/cmTC_74d3e.dir/build.make CMakeFiles/cmTC_74d3e.dir/build
+make[1]: Entering directory '/home/yingchen/wrapper_libjpeg/arm_pac/libjpeg-turbo/build/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_74d3e.dir/feature_tests.c.o
+/usr/bin/cc   -std=c11 -o CMakeFiles/cmTC_74d3e.dir/feature_tests.c.o   -c /home/yingchen/wrapper_libjpeg/arm_pac/libjpeg-turbo/build/CMakeFiles/feature_tests.c
+Linking C executable cmTC_74d3e
+/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_74d3e.dir/link.txt --verbose=1
+/usr/bin/cc      -rdynamic CMakeFiles/cmTC_74d3e.dir/feature_tests.c.o  -o cmTC_74d3e 
+make[1]: Leaving directory '/home/yingchen/wrapper_libjpeg/arm_pac/libjpeg-turbo/build/CMakeFiles/CMakeTmp'
+
+
+    Feature record: C_FEATURE:1c_function_prototypes
+    Feature record: C_FEATURE:1c_restrict
+    Feature record: C_FEATURE:1c_static_assert
+    Feature record: C_FEATURE:1c_variadic_macros
+
+
+Detecting C [-std=c99] compiler features compiled with the following output:
+Change Dir: /home/yingchen/wrapper_libjpeg/arm_pac/libjpeg-turbo/build/CMakeFiles/CMakeTmp
+
+Run Build Command:"/usr/bin/make" "cmTC_450c7/fast"
+/usr/bin/make -f CMakeFiles/cmTC_450c7.dir/build.make CMakeFiles/cmTC_450c7.dir/build
+make[1]: Entering directory '/home/yingchen/wrapper_libjpeg/arm_pac/libjpeg-turbo/build/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_450c7.dir/feature_tests.c.o
+/usr/bin/cc   -std=c99 -o CMakeFiles/cmTC_450c7.dir/feature_tests.c.o   -c /home/yingchen/wrapper_libjpeg/arm_pac/libjpeg-turbo/build/CMakeFiles/feature_tests.c
+Linking C executable cmTC_450c7
+/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_450c7.dir/link.txt --verbose=1
+/usr/bin/cc      -rdynamic CMakeFiles/cmTC_450c7.dir/feature_tests.c.o  -o cmTC_450c7 
+make[1]: Leaving directory '/home/yingchen/wrapper_libjpeg/arm_pac/libjpeg-turbo/build/CMakeFiles/CMakeTmp'
+
+
+    Feature record: C_FEATURE:1c_function_prototypes
+    Feature record: C_FEATURE:1c_restrict
+    Feature record: C_FEATURE:0c_static_assert
+    Feature record: C_FEATURE:1c_variadic_macros
+
+
+Detecting C [-std=c90] compiler features compiled with the following output:
+Change Dir: /home/yingchen/wrapper_libjpeg/arm_pac/libjpeg-turbo/build/CMakeFiles/CMakeTmp
+
+Run Build Command:"/usr/bin/make" "cmTC_a23a4/fast"
+/usr/bin/make -f CMakeFiles/cmTC_a23a4.dir/build.make CMakeFiles/cmTC_a23a4.dir/build
+make[1]: Entering directory '/home/yingchen/wrapper_libjpeg/arm_pac/libjpeg-turbo/build/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_a23a4.dir/feature_tests.c.o
+/usr/bin/cc   -std=c90 -o CMakeFiles/cmTC_a23a4.dir/feature_tests.c.o   -c /home/yingchen/wrapper_libjpeg/arm_pac/libjpeg-turbo/build/CMakeFiles/feature_tests.c
+Linking C executable cmTC_a23a4
+/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_a23a4.dir/link.txt --verbose=1
+/usr/bin/cc      -rdynamic CMakeFiles/cmTC_a23a4.dir/feature_tests.c.o  -o cmTC_a23a4 
+make[1]: Leaving directory '/home/yingchen/wrapper_libjpeg/arm_pac/libjpeg-turbo/build/CMakeFiles/CMakeTmp'
+
+
+    Feature record: C_FEATURE:1c_function_prototypes
+    Feature record: C_FEATURE:0c_restrict
+    Feature record: C_FEATURE:0c_static_assert
+    Feature record: C_FEATURE:0c_variadic_macros
+Determining if the include file sys/types.h exists passed with the following output:
+Change Dir: /home/yingchen/wrapper_libjpeg/arm_pac/libjpeg-turbo/build/CMakeFiles/CMakeTmp
+
+Run Build Command:"/usr/bin/make" "cmTC_cec82/fast"
+/usr/bin/make -f CMakeFiles/cmTC_cec82.dir/build.make CMakeFiles/cmTC_cec82.dir/build
+make[1]: Entering directory '/home/yingchen/wrapper_libjpeg/arm_pac/libjpeg-turbo/build/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_cec82.dir/CheckIncludeFile.c.o
+/usr/bin/cc    -o CMakeFiles/cmTC_cec82.dir/CheckIncludeFile.c.o   -c /home/yingchen/wrapper_libjpeg/arm_pac/libjpeg-turbo/build/CMakeFiles/CMakeTmp/CheckIncludeFile.c
+Linking C executable cmTC_cec82
+/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_cec82.dir/link.txt --verbose=1
+/usr/bin/cc      -rdynamic CMakeFiles/cmTC_cec82.dir/CheckIncludeFile.c.o  -o cmTC_cec82 
+make[1]: Leaving directory '/home/yingchen/wrapper_libjpeg/arm_pac/libjpeg-turbo/build/CMakeFiles/CMakeTmp'
+
+
+Determining if the include file stdint.h exists passed with the following output:
+Change Dir: /home/yingchen/wrapper_libjpeg/arm_pac/libjpeg-turbo/build/CMakeFiles/CMakeTmp
+
+Run Build Command:"/usr/bin/make" "cmTC_81266/fast"
+/usr/bin/make -f CMakeFiles/cmTC_81266.dir/build.make CMakeFiles/cmTC_81266.dir/build
+make[1]: Entering directory '/home/yingchen/wrapper_libjpeg/arm_pac/libjpeg-turbo/build/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_81266.dir/CheckIncludeFile.c.o
+/usr/bin/cc    -o CMakeFiles/cmTC_81266.dir/CheckIncludeFile.c.o   -c /home/yingchen/wrapper_libjpeg/arm_pac/libjpeg-turbo/build/CMakeFiles/CMakeTmp/CheckIncludeFile.c
+Linking C executable cmTC_81266
+/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_81266.dir/link.txt --verbose=1
+/usr/bin/cc      -rdynamic CMakeFiles/cmTC_81266.dir/CheckIncludeFile.c.o  -o cmTC_81266 
+make[1]: Leaving directory '/home/yingchen/wrapper_libjpeg/arm_pac/libjpeg-turbo/build/CMakeFiles/CMakeTmp'
+
+
+Determining if the include file stddef.h exists passed with the following output:
+Change Dir: /home/yingchen/wrapper_libjpeg/arm_pac/libjpeg-turbo/build/CMakeFiles/CMakeTmp
+
+Run Build Command:"/usr/bin/make" "cmTC_ed13e/fast"
+/usr/bin/make -f CMakeFiles/cmTC_ed13e.dir/build.make CMakeFiles/cmTC_ed13e.dir/build
+make[1]: Entering directory '/home/yingchen/wrapper_libjpeg/arm_pac/libjpeg-turbo/build/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_ed13e.dir/CheckIncludeFile.c.o
+/usr/bin/cc    -o CMakeFiles/cmTC_ed13e.dir/CheckIncludeFile.c.o   -c /home/yingchen/wrapper_libjpeg/arm_pac/libjpeg-turbo/build/CMakeFiles/CMakeTmp/CheckIncludeFile.c
+Linking C executable cmTC_ed13e
+/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_ed13e.dir/link.txt --verbose=1
+/usr/bin/cc      -rdynamic CMakeFiles/cmTC_ed13e.dir/CheckIncludeFile.c.o  -o cmTC_ed13e 
+make[1]: Leaving directory '/home/yingchen/wrapper_libjpeg/arm_pac/libjpeg-turbo/build/CMakeFiles/CMakeTmp'
+
+
+Determining size of size_t passed with the following output:
+Change Dir: /home/yingchen/wrapper_libjpeg/arm_pac/libjpeg-turbo/build/CMakeFiles/CMakeTmp
+
+Run Build Command:"/usr/bin/make" "cmTC_0723e/fast"
+/usr/bin/make -f CMakeFiles/cmTC_0723e.dir/build.make CMakeFiles/cmTC_0723e.dir/build
+make[1]: Entering directory '/home/yingchen/wrapper_libjpeg/arm_pac/libjpeg-turbo/build/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_0723e.dir/SIZE_T.c.o
+/usr/bin/cc    -o CMakeFiles/cmTC_0723e.dir/SIZE_T.c.o   -c /home/yingchen/wrapper_libjpeg/arm_pac/libjpeg-turbo/build/CMakeFiles/CheckTypeSize/SIZE_T.c
+Linking C executable cmTC_0723e
+/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_0723e.dir/link.txt --verbose=1
+/usr/bin/cc      -rdynamic CMakeFiles/cmTC_0723e.dir/SIZE_T.c.o  -o cmTC_0723e 
+make[1]: Leaving directory '/home/yingchen/wrapper_libjpeg/arm_pac/libjpeg-turbo/build/CMakeFiles/CMakeTmp'
+
+
+Determining size of unsigned long passed with the following output:
+Change Dir: /home/yingchen/wrapper_libjpeg/arm_pac/libjpeg-turbo/build/CMakeFiles/CMakeTmp
+
+Run Build Command:"/usr/bin/make" "cmTC_da8bf/fast"
+/usr/bin/make -f CMakeFiles/cmTC_da8bf.dir/build.make CMakeFiles/cmTC_da8bf.dir/build
+make[1]: Entering directory '/home/yingchen/wrapper_libjpeg/arm_pac/libjpeg-turbo/build/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_da8bf.dir/UNSIGNED_LONG.c.o
+/usr/bin/cc    -o CMakeFiles/cmTC_da8bf.dir/UNSIGNED_LONG.c.o   -c /home/yingchen/wrapper_libjpeg/arm_pac/libjpeg-turbo/build/CMakeFiles/CheckTypeSize/UNSIGNED_LONG.c
+Linking C executable cmTC_da8bf
+/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_da8bf.dir/link.txt --verbose=1
+/usr/bin/cc      -rdynamic CMakeFiles/cmTC_da8bf.dir/UNSIGNED_LONG.c.o  -o cmTC_da8bf 
+make[1]: Leaving directory '/home/yingchen/wrapper_libjpeg/arm_pac/libjpeg-turbo/build/CMakeFiles/CMakeTmp'
+
+
+Performing C SOURCE FILE Test HAVE_BUILTIN_CTZL succeeded with the following output:
+Change Dir: /home/yingchen/wrapper_libjpeg/arm_pac/libjpeg-turbo/build/CMakeFiles/CMakeTmp
+
+Run Build Command:"/usr/bin/make" "cmTC_2b44b/fast"
+/usr/bin/make -f CMakeFiles/cmTC_2b44b.dir/build.make CMakeFiles/cmTC_2b44b.dir/build
+make[1]: Entering directory '/home/yingchen/wrapper_libjpeg/arm_pac/libjpeg-turbo/build/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_2b44b.dir/src.c.o
+/usr/bin/cc   -DHAVE_BUILTIN_CTZL   -o CMakeFiles/cmTC_2b44b.dir/src.c.o   -c /home/yingchen/wrapper_libjpeg/arm_pac/libjpeg-turbo/build/CMakeFiles/CMakeTmp/src.c
+Linking C executable cmTC_2b44b
+/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_2b44b.dir/link.txt --verbose=1
+/usr/bin/cc  -DHAVE_BUILTIN_CTZL    -rdynamic CMakeFiles/cmTC_2b44b.dir/src.c.o  -o cmTC_2b44b 
+make[1]: Leaving directory '/home/yingchen/wrapper_libjpeg/arm_pac/libjpeg-turbo/build/CMakeFiles/CMakeTmp'
+
+Source file was:
+int main(int argc, char **argv) { unsigned long a = argc;  return __builtin_ctzl(a); }
+Determining if files locale.h exist passed with the following output:
+Change Dir: /home/yingchen/wrapper_libjpeg/arm_pac/libjpeg-turbo/build/CMakeFiles/CMakeTmp
+
+Run Build Command:"/usr/bin/make" "cmTC_18b19/fast"
+/usr/bin/make -f CMakeFiles/cmTC_18b19.dir/build.make CMakeFiles/cmTC_18b19.dir/build
+make[1]: Entering directory '/home/yingchen/wrapper_libjpeg/arm_pac/libjpeg-turbo/build/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_18b19.dir/CheckIncludeFiles.c.o
+/usr/bin/cc    -o CMakeFiles/cmTC_18b19.dir/CheckIncludeFiles.c.o   -c /home/yingchen/wrapper_libjpeg/arm_pac/libjpeg-turbo/build/CMakeFiles/CMakeTmp/CheckIncludeFiles.c
+Linking C executable cmTC_18b19
+/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_18b19.dir/link.txt --verbose=1
+/usr/bin/cc      -rdynamic CMakeFiles/cmTC_18b19.dir/CheckIncludeFiles.c.o  -o cmTC_18b19 
+make[1]: Leaving directory '/home/yingchen/wrapper_libjpeg/arm_pac/libjpeg-turbo/build/CMakeFiles/CMakeTmp'
+
+
+Determining if files stdlib.h exist passed with the following output:
+Change Dir: /home/yingchen/wrapper_libjpeg/arm_pac/libjpeg-turbo/build/CMakeFiles/CMakeTmp
+
+Run Build Command:"/usr/bin/make" "cmTC_266d1/fast"
+/usr/bin/make -f CMakeFiles/cmTC_266d1.dir/build.make CMakeFiles/cmTC_266d1.dir/build
+make[1]: Entering directory '/home/yingchen/wrapper_libjpeg/arm_pac/libjpeg-turbo/build/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_266d1.dir/CheckIncludeFiles.c.o
+/usr/bin/cc    -o CMakeFiles/cmTC_266d1.dir/CheckIncludeFiles.c.o   -c /home/yingchen/wrapper_libjpeg/arm_pac/libjpeg-turbo/build/CMakeFiles/CMakeTmp/CheckIncludeFiles.c
+Linking C executable cmTC_266d1
+/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_266d1.dir/link.txt --verbose=1
+/usr/bin/cc      -rdynamic CMakeFiles/cmTC_266d1.dir/CheckIncludeFiles.c.o  -o cmTC_266d1 
+make[1]: Leaving directory '/home/yingchen/wrapper_libjpeg/arm_pac/libjpeg-turbo/build/CMakeFiles/CMakeTmp'
+
+
+Determining if files sys/types.h exist passed with the following output:
+Change Dir: /home/yingchen/wrapper_libjpeg/arm_pac/libjpeg-turbo/build/CMakeFiles/CMakeTmp
+
+Run Build Command:"/usr/bin/make" "cmTC_26b1a/fast"
+/usr/bin/make -f CMakeFiles/cmTC_26b1a.dir/build.make CMakeFiles/cmTC_26b1a.dir/build
+make[1]: Entering directory '/home/yingchen/wrapper_libjpeg/arm_pac/libjpeg-turbo/build/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_26b1a.dir/CheckIncludeFiles.c.o
+/usr/bin/cc    -o CMakeFiles/cmTC_26b1a.dir/CheckIncludeFiles.c.o   -c /home/yingchen/wrapper_libjpeg/arm_pac/libjpeg-turbo/build/CMakeFiles/CMakeTmp/CheckIncludeFiles.c
+Linking C executable cmTC_26b1a
+/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_26b1a.dir/link.txt --verbose=1
+/usr/bin/cc      -rdynamic CMakeFiles/cmTC_26b1a.dir/CheckIncludeFiles.c.o  -o cmTC_26b1a 
+make[1]: Leaving directory '/home/yingchen/wrapper_libjpeg/arm_pac/libjpeg-turbo/build/CMakeFiles/CMakeTmp'
+
+
+Determining if the memset exist passed with the following output:
+Change Dir: /home/yingchen/wrapper_libjpeg/arm_pac/libjpeg-turbo/build/CMakeFiles/CMakeTmp
+
+Run Build Command:"/usr/bin/make" "cmTC_810bd/fast"
+/usr/bin/make -f CMakeFiles/cmTC_810bd.dir/build.make CMakeFiles/cmTC_810bd.dir/build
+make[1]: Entering directory '/home/yingchen/wrapper_libjpeg/arm_pac/libjpeg-turbo/build/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_810bd.dir/CheckSymbolExists.c.o
+/usr/bin/cc    -o CMakeFiles/cmTC_810bd.dir/CheckSymbolExists.c.o   -c /home/yingchen/wrapper_libjpeg/arm_pac/libjpeg-turbo/build/CMakeFiles/CMakeTmp/CheckSymbolExists.c
+Linking C executable cmTC_810bd
+/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_810bd.dir/link.txt --verbose=1
+/usr/bin/cc      -rdynamic CMakeFiles/cmTC_810bd.dir/CheckSymbolExists.c.o  -o cmTC_810bd 
+make[1]: Leaving directory '/home/yingchen/wrapper_libjpeg/arm_pac/libjpeg-turbo/build/CMakeFiles/CMakeTmp'
+
+File /home/yingchen/wrapper_libjpeg/arm_pac/libjpeg-turbo/build/CMakeFiles/CMakeTmp/CheckSymbolExists.c:
+/* */
+#include <string.h>
+
+int main(int argc, char** argv)
+{
+  (void)argv;
+#ifndef memset
+  return ((int*)(&memset))[argc];
+#else
+  (void)argc;
+  return 0;
+#endif
+}
+
+Determining if the memcpy exist passed with the following output:
+Change Dir: /home/yingchen/wrapper_libjpeg/arm_pac/libjpeg-turbo/build/CMakeFiles/CMakeTmp
+
+Run Build Command:"/usr/bin/make" "cmTC_d8392/fast"
+/usr/bin/make -f CMakeFiles/cmTC_d8392.dir/build.make CMakeFiles/cmTC_d8392.dir/build
+make[1]: Entering directory '/home/yingchen/wrapper_libjpeg/arm_pac/libjpeg-turbo/build/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_d8392.dir/CheckSymbolExists.c.o
+/usr/bin/cc    -o CMakeFiles/cmTC_d8392.dir/CheckSymbolExists.c.o   -c /home/yingchen/wrapper_libjpeg/arm_pac/libjpeg-turbo/build/CMakeFiles/CMakeTmp/CheckSymbolExists.c
+Linking C executable cmTC_d8392
+/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_d8392.dir/link.txt --verbose=1
+/usr/bin/cc      -rdynamic CMakeFiles/cmTC_d8392.dir/CheckSymbolExists.c.o  -o cmTC_d8392 
+make[1]: Leaving directory '/home/yingchen/wrapper_libjpeg/arm_pac/libjpeg-turbo/build/CMakeFiles/CMakeTmp'
+
+File /home/yingchen/wrapper_libjpeg/arm_pac/libjpeg-turbo/build/CMakeFiles/CMakeTmp/CheckSymbolExists.c:
+/* */
+#include <string.h>
+
+int main(int argc, char** argv)
+{
+  (void)argv;
+#ifndef memcpy
+  return ((int*)(&memcpy))[argc];
+#else
+  (void)argc;
+  return 0;
+#endif
+}
+
+Determining size of unsigned char passed with the following output:
+Change Dir: /home/yingchen/wrapper_libjpeg/arm_pac/libjpeg-turbo/build/CMakeFiles/CMakeTmp
+
+Run Build Command:"/usr/bin/make" "cmTC_75cdb/fast"
+/usr/bin/make -f CMakeFiles/cmTC_75cdb.dir/build.make CMakeFiles/cmTC_75cdb.dir/build
+make[1]: Entering directory '/home/yingchen/wrapper_libjpeg/arm_pac/libjpeg-turbo/build/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_75cdb.dir/UNSIGNED_CHAR.c.o
+/usr/bin/cc    -o CMakeFiles/cmTC_75cdb.dir/UNSIGNED_CHAR.c.o   -c /home/yingchen/wrapper_libjpeg/arm_pac/libjpeg-turbo/build/CMakeFiles/CheckTypeSize/UNSIGNED_CHAR.c
+Linking C executable cmTC_75cdb
+/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_75cdb.dir/link.txt --verbose=1
+/usr/bin/cc      -rdynamic CMakeFiles/cmTC_75cdb.dir/UNSIGNED_CHAR.c.o  -o cmTC_75cdb 
+make[1]: Leaving directory '/home/yingchen/wrapper_libjpeg/arm_pac/libjpeg-turbo/build/CMakeFiles/CMakeTmp'
+
+
+Determining size of unsigned short passed with the following output:
+Change Dir: /home/yingchen/wrapper_libjpeg/arm_pac/libjpeg-turbo/build/CMakeFiles/CMakeTmp
+
+Run Build Command:"/usr/bin/make" "cmTC_2d846/fast"
+/usr/bin/make -f CMakeFiles/cmTC_2d846.dir/build.make CMakeFiles/cmTC_2d846.dir/build
+make[1]: Entering directory '/home/yingchen/wrapper_libjpeg/arm_pac/libjpeg-turbo/build/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_2d846.dir/UNSIGNED_SHORT.c.o
+/usr/bin/cc    -o CMakeFiles/cmTC_2d846.dir/UNSIGNED_SHORT.c.o   -c /home/yingchen/wrapper_libjpeg/arm_pac/libjpeg-turbo/build/CMakeFiles/CheckTypeSize/UNSIGNED_SHORT.c
+Linking C executable cmTC_2d846
+/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_2d846.dir/link.txt --verbose=1
+/usr/bin/cc      -rdynamic CMakeFiles/cmTC_2d846.dir/UNSIGNED_SHORT.c.o  -o cmTC_2d846 
+make[1]: Leaving directory '/home/yingchen/wrapper_libjpeg/arm_pac/libjpeg-turbo/build/CMakeFiles/CMakeTmp'
+
+
+Performing C SOURCE FILE Test INCOMPLETE_TYPES succeeded with the following output:
+Change Dir: /home/yingchen/wrapper_libjpeg/arm_pac/libjpeg-turbo/build/CMakeFiles/CMakeTmp
+
+Run Build Command:"/usr/bin/make" "cmTC_2d36f/fast"
+/usr/bin/make -f CMakeFiles/cmTC_2d36f.dir/build.make CMakeFiles/cmTC_2d36f.dir/build
+make[1]: Entering directory '/home/yingchen/wrapper_libjpeg/arm_pac/libjpeg-turbo/build/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_2d36f.dir/src.c.o
+/usr/bin/cc   -DINCOMPLETE_TYPES   -o CMakeFiles/cmTC_2d36f.dir/src.c.o   -c /home/yingchen/wrapper_libjpeg/arm_pac/libjpeg-turbo/build/CMakeFiles/CMakeTmp/src.c
+Linking C executable cmTC_2d36f
+/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_2d36f.dir/link.txt --verbose=1
+/usr/bin/cc  -DINCOMPLETE_TYPES    -rdynamic CMakeFiles/cmTC_2d36f.dir/src.c.o  -o cmTC_2d36f 
+make[1]: Leaving directory '/home/yingchen/wrapper_libjpeg/arm_pac/libjpeg-turbo/build/CMakeFiles/CMakeTmp'
+
+Source file was:
+int main(void) { typedef struct undefined_structure *undef_struct_ptr;  undef_struct_ptr ptr = 0;  return ptr != 0; }
+Performing C SOURCE FILE Test INLINE_WORKS succeeded with the following output:
+Change Dir: /home/yingchen/wrapper_libjpeg/arm_pac/libjpeg-turbo/build/CMakeFiles/CMakeTmp
+
+Run Build Command:"/usr/bin/make" "cmTC_cb10b/fast"
+/usr/bin/make -f CMakeFiles/cmTC_cb10b.dir/build.make CMakeFiles/cmTC_cb10b.dir/build
+make[1]: Entering directory '/home/yingchen/wrapper_libjpeg/arm_pac/libjpeg-turbo/build/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_cb10b.dir/src.c.o
+/usr/bin/cc   -DINLINE_WORKS   -o CMakeFiles/cmTC_cb10b.dir/src.c.o   -c /home/yingchen/wrapper_libjpeg/arm_pac/libjpeg-turbo/build/CMakeFiles/CMakeTmp/src.c
+Linking C executable cmTC_cb10b
+/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_cb10b.dir/link.txt --verbose=1
+/usr/bin/cc  -DINLINE_WORKS    -rdynamic CMakeFiles/cmTC_cb10b.dir/src.c.o  -o cmTC_cb10b 
+make[1]: Leaving directory '/home/yingchen/wrapper_libjpeg/arm_pac/libjpeg-turbo/build/CMakeFiles/CMakeTmp'
+
+Source file was:
+__inline__ __attribute__((always_inline)) static int foo(void) { return 0; } int main(void) { return foo(); }
+Performing C SOURCE FILE Test HAVE_THREAD_LOCAL succeeded with the following output:
+Change Dir: /home/yingchen/wrapper_libjpeg/arm_pac/libjpeg-turbo/build/CMakeFiles/CMakeTmp
+
+Run Build Command:"/usr/bin/make" "cmTC_adfd9/fast"
+/usr/bin/make -f CMakeFiles/cmTC_adfd9.dir/build.make CMakeFiles/cmTC_adfd9.dir/build
+make[1]: Entering directory '/home/yingchen/wrapper_libjpeg/arm_pac/libjpeg-turbo/build/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_adfd9.dir/src.c.o
+/usr/bin/cc   -DHAVE_THREAD_LOCAL   -o CMakeFiles/cmTC_adfd9.dir/src.c.o   -c /home/yingchen/wrapper_libjpeg/arm_pac/libjpeg-turbo/build/CMakeFiles/CMakeTmp/src.c
+Linking C executable cmTC_adfd9
+/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_adfd9.dir/link.txt --verbose=1
+/usr/bin/cc  -DHAVE_THREAD_LOCAL    -rdynamic CMakeFiles/cmTC_adfd9.dir/src.c.o  -o cmTC_adfd9 
+make[1]: Leaving directory '/home/yingchen/wrapper_libjpeg/arm_pac/libjpeg-turbo/build/CMakeFiles/CMakeTmp'
+
+Source file was:
+__thread int i;  int main(void) { i = 0;  return i; }
+Performing C SOURCE FILE Test HAVE_VERSION_SCRIPT succeeded with the following output:
+Change Dir: /home/yingchen/wrapper_libjpeg/arm_pac/libjpeg-turbo/build/CMakeFiles/CMakeTmp
+
+Run Build Command:"/usr/bin/make" "cmTC_42256/fast"
+/usr/bin/make -f CMakeFiles/cmTC_42256.dir/build.make CMakeFiles/cmTC_42256.dir/build
+make[1]: Entering directory '/home/yingchen/wrapper_libjpeg/arm_pac/libjpeg-turbo/build/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_42256.dir/src.c.o
+/usr/bin/cc   -DHAVE_VERSION_SCRIPT -Wl,--version-script,/home/yingchen/wrapper_libjpeg/arm_pac/libjpeg-turbo/build/conftest.map   -o CMakeFiles/cmTC_42256.dir/src.c.o   -c /home/yingchen/wrapper_libjpeg/arm_pac/libjpeg-turbo/build/CMakeFiles/CMakeTmp/src.c
+Linking C executable cmTC_42256
+/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_42256.dir/link.txt --verbose=1
+/usr/bin/cc  -DHAVE_VERSION_SCRIPT -Wl,--version-script,/home/yingchen/wrapper_libjpeg/arm_pac/libjpeg-turbo/build/conftest.map    -rdynamic CMakeFiles/cmTC_42256.dir/src.c.o  -o cmTC_42256 
+make[1]: Leaving directory '/home/yingchen/wrapper_libjpeg/arm_pac/libjpeg-turbo/build/CMakeFiles/CMakeTmp'
+
+Source file was:
+int main(void) { return 0; }
